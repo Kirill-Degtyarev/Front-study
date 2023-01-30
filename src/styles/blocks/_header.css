@@ -1,0 +1,144 @@
+.header {
+  position: sticky;
+  top: 0px;
+  max-height: 105px;
+  min-height: 100%;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--athens-gray);
+  margin-bottom: 40px;
+}
+
+.header__container {
+  height: 100%;
+}
+
+.header__body {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 13px 0px 10px 0px;
+}
+
+.logo {
+  margin-top: 5px;
+  order: 1;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: flex-end;
+  order: 3;
+  margin-top: 12px;
+  padding: 11px 0px 0px 0px;
+}
+
+.search::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: 1px;
+  background-color: var(--athens-gray);
+}
+
+.search-body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-body__icon {
+  display: flex;
+  cursor: pointer;
+}
+
+.search-body__input {
+  width: 100%;
+}
+
+.search-body__input input[type='search'] {
+  width: 100%;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #8591a5;
+}
+
+.user-info {
+  order: 2;
+}
+
+.user-info__body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.user-info__name {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--regent-gray);
+}
+
+.user-info__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--periwinkle-gray);
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 66px;
+  }
+
+  .header__body {
+    flex-wrap: nowrap;
+    justify-content: normal;
+    gap: 20px;
+  }
+
+  .search {
+    order: 2;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .search::before {
+    top: -13px;
+    left: 0;
+    width: 1px;
+    height: calc(100% + 23px);
+  }
+
+  .search::after {
+    content: '';
+    position: absolute;
+    top: -13px;
+    right: -1px;
+    width: 1px;
+    height: calc(100% + 23px);
+    background-color: var(--athens-gray);
+  }
+
+  .search-body {
+    padding: 0 20px;
+  }
+
+  .user-info {
+    order: 3;
+  }
+}

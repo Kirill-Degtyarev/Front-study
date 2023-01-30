@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Front Study</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta charset="UTF-8">
+    <link href="{{ 'main.css'|manifest }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        {% include './blocks/_header.twig' %}
+        {% include './blocks/_main.twig' %}
+        {% include './blocks/_footer.twig' %}
+    </div>
+    <script src="{{ 'main.js'|manifest }}"></script>
+</body>
+
+</html>
