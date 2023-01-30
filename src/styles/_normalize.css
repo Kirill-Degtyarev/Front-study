@@ -79,11 +79,12 @@ button::-moz-focus-inner {
 a,
 a:visited {
   text-decoration: none;
+  cursor: pointer;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: none;
-}
+} */
 
 ul li {
   list-style: none;

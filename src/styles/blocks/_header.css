@@ -1,11 +1,11 @@
 .header {
   position: sticky;
   top: 0px;
+  z-index: 10;
   max-height: 105px;
   min-height: 100%;
   background-color: var(--white);
   border-bottom: 1px solid var(--athens-gray);
-  margin-bottom: 40px;
 }
 
 .header__container {
@@ -80,7 +80,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  cursor: pointer;
 }
 
 .user-info__name {
@@ -90,6 +89,7 @@
   font-size: 15px;
   line-height: 19px;
   color: var(--regent-gray);
+  cursor: text;
 }
 
 .user-info__avatar {
@@ -97,6 +97,7 @@
   height: 40px;
   border-radius: 50%;
   background-color: var(--periwinkle-gray);
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
