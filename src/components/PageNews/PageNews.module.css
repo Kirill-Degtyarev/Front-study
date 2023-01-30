@@ -1,0 +1,38 @@
+.news__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.news__top {
+  margin-bottom: 25px;
+}
+
+.news__top-title {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--outer-space);
+  margin-bottom: 10px;
+}
+
+.news__top-title span {
+  color: var(--cornflower-blue);
+}
+
+.news__top-description {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: var(--outer-space);
+}
+
+.news__top-description a {
+  text-decoration-line: underline;
+  color: var(--cornflower-blue);
+}
