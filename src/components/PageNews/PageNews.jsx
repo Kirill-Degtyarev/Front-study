@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
-import classNames from 'classnames';
+
+import CardItem from '../CardItem/CardItem';
+import Button from '../../UI/Button';
+import CardSkeleton from '../CardSkeleton/CardSkeleton';
 
 import styles from './PageNews.module.css';
-import NewsItem from '../NewsItem/NewsItem';
-import Button from '../../UI/Button';
 
-const PageNews = ({ data, itemType, setPathName }) => {
+const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
   const [counterItem, setCounterItem] = useState(5);
   const menuList = useRef(null);
 
@@ -22,7 +23,7 @@ const PageNews = ({ data, itemType, setPathName }) => {
     }
   };
 
-  const sortNews =
+  const sortCard =
     data &&
     data
       .sort((a, b) => {
@@ -30,17 +31,21 @@ const PageNews = ({ data, itemType, setPathName }) => {
       })
       .slice(0, counterItem)
       .map((item, index) => (
-        <NewsItem
+        <CardItem
           key={item.id}
-          id={item.id}
-          title={item.title}
+          indexId={index}
+          dataItem={item}
           bgImg={(index + 1) % 3 === 0}
+          isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
           itemType={itemType}
-          subtitle={item.previewtext}
-          imgUrl={item.image ? item.image : item.link}
-          date={item.pubDate}
         />
       ));
+
+  const skeleton = [...new Array(5)].map((_, index) => (
+    <li className={styles.skeleton__body} key={index}>
+      <CardSkeleton />
+    </li>
+  ));
 
   const handleChangeCounterItem = () => {
     setCounterItem((prev) => prev + 5);
@@ -53,7 +58,10 @@ const PageNews = ({ data, itemType, setPathName }) => {
           <h1 className={styles['news__top-title']}>
             Получите <span>максимум</span> от отдела продаж
           </h1>
-          <p className={styles['news__top-description']}>
+          <p
+            className={
+              'fz15-regent-gray' + ' ' + styles['news__top-description']
+            }>
             amoCRM — это полный набор инструментов, которые раскроют потенциал
             вашего отдела продаж и повысят его эффективность. Считается лучшей
             CRM-системой по версии&nbsp;
@@ -67,6 +75,8 @@ const PageNews = ({ data, itemType, setPathName }) => {
             <ul className={styles['news-main__menu-list']} ref={menuList}>
               <li
                 className={
+                  'fz15-regent-gray' +
+                  ' ' +
                   styles['menu-list__item'] +
                   ' ' +
                   styles['menu-list__item-active']
@@ -78,7 +88,7 @@ const PageNews = ({ data, itemType, setPathName }) => {
                 Новости
               </li>
               <li
-                className={styles['menu-list__item']}
+                className={'fz15-regent-gray' + ' ' + styles['menu-list__item']}
                 id="promotions"
                 onClick={(e) => {
                   handleActiveTab(e);
@@ -88,9 +98,11 @@ const PageNews = ({ data, itemType, setPathName }) => {
             </ul>
           </div>
           <div className={styles['news-main__body']}>
-            <ul className={styles['news-list']}>{sortNews}</ul>
+            <ul className={styles['card-list']}>
+              {isLoaded ? sortCard : skeleton}
+            </ul>
           </div>
-          {data && counterItem !== data.length && (
+          {data && counterItem < data.length && (
             <div className={styles['news-main__button']}>
               <Button onClickHandler={handleChangeCounterItem}>
                 Смотреть ещё

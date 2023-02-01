@@ -60,12 +60,8 @@
 }
 
 .documents-list__item {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 130%;
-  color: var(--white);
+  line-height: 130% !important;
+  color: var(--white) !important;
   cursor: pointer;
 }
 
