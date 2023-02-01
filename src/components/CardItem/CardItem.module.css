@@ -230,6 +230,11 @@
     height: 206px;
   }
 
+  .card-promotions .item-body__star {
+    top: 11px;
+    right: 11px;
+  }
+
   .card-promotions .card-list__item-body {
     position: relative;
     max-width: calc(100% - 206px);

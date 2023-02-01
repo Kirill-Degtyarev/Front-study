@@ -10,6 +10,9 @@ const CardItem = ({ id, indexId, dataItem, bgImg, isReversed, itemType }) => {
   const [isLiked, setIsLiked] = useState(false);
   const bodyInfoRef = useRef(null);
 
+  /**
+   * Форматируем дату, которая нам приходит с бэка, в привычную для нас
+   **/
   const getDate = (date) => {
     const newDate = new Date(Number(date));
     const day =
@@ -23,6 +26,9 @@ const CardItem = ({ id, indexId, dataItem, bgImg, isReversed, itemType }) => {
     return fullDate;
   };
 
+  /**
+   * Получение статуса акции на текущий момент
+   **/
   const getStatus = (date) => {
     const currentDate = new Date();
     if (new Date(Number(date)) < currentDate) return 'Завершено';
@@ -41,7 +47,6 @@ const CardItem = ({ id, indexId, dataItem, bgImg, isReversed, itemType }) => {
   //     console.log(currentEl.childNodes[1]);
   //   }
   // };
-
   // getCountString();
 
   const itemClass = classNames(styles['card-list__item'], {

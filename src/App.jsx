@@ -15,6 +15,10 @@ const App = () => {
     pathname === '/' ? 'news' : pathname,
   );
 
+  /**
+   * Получение данных и сохранение данных при первом ренедере
+   * и изменении показываемых карточек
+   */
   useEffect(() => {
     if (pathname === '/') {
       setIsLoaded(false);

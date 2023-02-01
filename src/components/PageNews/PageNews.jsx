@@ -10,6 +10,9 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
   const [counterItem, setCounterItem] = useState(5);
   const menuList = useRef(null);
 
+  /**
+   * Изменение активных вкладок "Новости"/"Акции"
+   **/
   const handleActiveTab = (e) => {
     if (menuList.current) {
       [...menuList.current.childNodes].forEach((el) => {
@@ -22,6 +25,10 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
       e.target.classList.add(styles['menu-list__item-active']);
     }
   };
+
+  /**
+   * Сортировка данных по времени и колличеству
+   */
 
   const sortCard =
     data &&
@@ -46,6 +53,10 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
       <CardSkeleton />
     </li>
   ));
+
+  /**
+   * Увеличение показываемых новостей
+   */
 
   const handleChangeCounterItem = () => {
     setCounterItem((prev) => prev + 5);
@@ -102,7 +113,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
               {isLoaded ? sortCard : skeleton}
             </ul>
           </div>
-          {data && counterItem < data.length && (
+          {data && (counterItem < data.length || itemType === 'promotions') && (
             <div className={styles['news-main__button']}>
               <Button onClickHandler={handleChangeCounterItem}>
                 Смотреть ещё
