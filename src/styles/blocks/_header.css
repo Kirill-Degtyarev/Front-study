@@ -64,12 +64,6 @@
 
 .search-body__input input[type='search'] {
   width: 100%;
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
-  color: #8591a5;
 }
 
 .user-info {
@@ -83,12 +77,6 @@
 }
 
 .user-info__name {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
-  color: var(--regent-gray);
   cursor: text;
 }
 

@@ -1,11 +1,11 @@
 @import url('normalize.css');
 @import url('./_variables.css');
 @import url('./_normalize.css');
-@import url('./_generic.css');
 @import url('./_fonts.css');
 @import url('../styles/blocks/_header.css');
 @import url('../styles/blocks/_main.css');
 @import url('../styles/blocks/_footer.css');
+@import url('./_generic.css');
 
 .wrapper {
   display: flex;

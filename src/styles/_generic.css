@@ -1,0 +1,17 @@
+.fz15-regent-gray {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: var(--regent-gray);
+}
+
+.fz13-regent-gray {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  color: var(--regent-gray);
+}

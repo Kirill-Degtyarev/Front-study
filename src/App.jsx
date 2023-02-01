@@ -8,6 +8,7 @@ import PageProfile from './components/PageProfile/PageProfile';
 import PageFullNews from './components/PageFullNews/PageFullNews';
 
 const App = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState(null);
   const { pathname } = useLocation();
   const [pathName, setPathName] = useState(
@@ -16,10 +17,12 @@ const App = () => {
 
   useEffect(() => {
     if (pathname === '/') {
+      setIsLoaded(false);
       try {
         const fetchData = async () => {
           const { data } = await axios.get(`http://localhost/api/${pathName}`);
           setData(data);
+          setIsLoaded(true);
         };
         fetchData();
       } catch (error) {
@@ -36,6 +39,7 @@ const App = () => {
           index
           element={
             <PageNews
+              isLoaded={isLoaded}
               itemType={pathName}
               data={data}
               setPathName={setPathName}
