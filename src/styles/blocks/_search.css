@@ -1,0 +1,25 @@
+.search-body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-body__icon {
+  display: flex;
+  cursor: pointer;
+}
+
+.search-body__input {
+  width: 100%;
+}
+
+.search-body__input input[type='search'] {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .search-body {
+    padding: 0 20px;
+  }
+}

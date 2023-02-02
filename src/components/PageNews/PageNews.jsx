@@ -20,7 +20,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
           el.classList.remove(styles['menu-list__item-active']);
         }
       });
-      setPathName(e.target.id);
+      setPathName('/' + e.target.id);
       setCounterItem(5);
       e.target.classList.add(styles['menu-list__item-active']);
     }
@@ -59,7 +59,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
    */
 
   const handleChangeCounterItem = () => {
-    setCounterItem((prev) => prev + 5);
+    if (counterItem < data.length) setCounterItem((prev) => prev + 5);
   };
 
   return (
@@ -114,7 +114,12 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
             </ul>
           </div>
           {data && (counterItem < data.length || itemType === 'promotions') && (
-            <div className={styles['news-main__button']}>
+            <div
+              className={`${styles['news-main__button']} ${
+                itemType === 'promotions' && counterItem > data.length
+                  ? styles['button-disabled']
+                  : ''
+              }`}>
               <Button onClickHandler={handleChangeCounterItem}>
                 Смотреть ещё
               </Button>

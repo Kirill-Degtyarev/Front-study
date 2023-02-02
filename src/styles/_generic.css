@@ -15,3 +15,163 @@
   line-height: 130%;
   color: var(--regent-gray);
 }
+
+h1 {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--outer-space);
+}
+
+h2 {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  color: var(--outer-space);
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--outer-space);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 154%;
+  color: var(--outer-space);
+  margin-bottom: 20px;
+}
+
+span {
+  display: block;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: var(--regent-gray);
+  margin-bottom: 10px;
+}
+
+img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+a {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: var(--cornflower-blue);
+}
+
+ul {
+  margin-bottom: 20px;
+  margin-left: 35px;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 154%;
+  color: var(--outer-space);
+}
+
+ul li {
+  list-style: disc;
+  margin-bottom: 10px;
+}
+
+ul li::marker {
+  color: var(--sail);
+}
+
+ul li ul {
+  margin-bottom: 0;
+}
+
+ul li ul li:last-child {
+  margin-bottom: 0px;
+}
+
+ol {
+  list-style: none;
+  counter-reset: li;
+  margin-bottom: 20px;
+  margin-left: 42px;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 154%;
+  color: var(--outer-space);
+}
+
+ol li {
+  position: relative;
+}
+
+ol li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+ol li::before {
+  position: absolute;
+  counter-increment: li;
+  content: counters(li, '.') '. ';
+  color: var(--sail);
+  left: -22px;
+}
+
+ol li ol {
+  margin: 10px 0px 10px 50px;
+}
+
+ol li ol li::before {
+  left: -30px;
+}
+
+blockquote {
+  background-color: var(--wild-sand);
+  padding: 20px 25px;
+  border-radius: 3px;
+  border-left: 5px solid var(--sail);
+  margin-bottom: 20px;
+}
+
+blockquote p {
+  margin-bottom: 0;
+  line-height: 150%;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  h3 {
+    margin-top: 38px;
+  }
+  img {
+    height: 434px;
+  }
+}
