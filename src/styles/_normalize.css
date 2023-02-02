@@ -82,9 +82,9 @@ a:visited {
   cursor: pointer;
 }
 
-/* a:hover {
+a:hover {
   text-decoration: none;
-} */
+}
 
 ul li {
   list-style: none;

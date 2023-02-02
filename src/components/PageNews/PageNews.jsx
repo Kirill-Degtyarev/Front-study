@@ -10,6 +10,9 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
   const [counterItem, setCounterItem] = useState(5);
   const menuList = useRef(null);
 
+  /**
+   * Изменение активных вкладок "Новости"/"Акции"
+   **/
   const handleActiveTab = (e) => {
     if (menuList.current) {
       [...menuList.current.childNodes].forEach((el) => {
@@ -17,11 +20,15 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
           el.classList.remove(styles['menu-list__item-active']);
         }
       });
-      setPathName(e.target.id);
+      setPathName('/' + e.target.id);
       setCounterItem(5);
       e.target.classList.add(styles['menu-list__item-active']);
     }
   };
+
+  /**
+   * Сортировка данных по времени и колличеству
+   */
 
   const sortCard =
     data &&
@@ -33,7 +40,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
       .map((item, index) => (
         <CardItem
           key={item.id}
-          indexId={index}
+          indexId={index < 9 ? index : (index + 1) % 10}
           dataItem={item}
           bgImg={(index + 1) % 3 === 0}
           isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
@@ -47,8 +54,12 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
     </li>
   ));
 
+  /**
+   * Увеличение показываемых новостей
+   */
+
   const handleChangeCounterItem = () => {
-    setCounterItem((prev) => prev + 5);
+    if (counterItem < data.length) setCounterItem((prev) => prev + 5);
   };
 
   return (
@@ -102,8 +113,13 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
               {isLoaded ? sortCard : skeleton}
             </ul>
           </div>
-          {data && counterItem < data.length && (
-            <div className={styles['news-main__button']}>
+          {data && (counterItem < data.length || itemType === 'promotions') && (
+            <div
+              className={`${styles['news-main__button']} ${
+                itemType === 'promotions' && counterItem > data.length
+                  ? styles['button-disabled']
+                  : ''
+              }`}>
               <Button onClickHandler={handleChangeCounterItem}>
                 Смотреть ещё
               </Button>

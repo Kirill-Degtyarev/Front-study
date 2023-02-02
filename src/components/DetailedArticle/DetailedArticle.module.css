@@ -1,0 +1,15 @@
+.article-body {
+  width: 100vw;
+  margin-left: -20px;
+  margin-bottom: -40px;
+  background-color: var(--white);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.03);
+  padding: 30px 20px 39px 20px;
+}
+
+@media (min-width: 768px) {
+  .article-body {
+    padding: 40px 20px 49px 20px;
+    margin-bottom: -50px;
+  }
+}

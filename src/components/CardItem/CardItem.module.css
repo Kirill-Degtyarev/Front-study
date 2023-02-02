@@ -6,6 +6,7 @@
   background-color: var(--white);
   border-radius: 3px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.03);
+  margin: 0px 0px 0px 0px;
 }
 
 .card-list__item-img {
@@ -17,6 +18,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 3px 3px 0px 0px;
+  margin: 0px 0px 0px 0px;
   -webkit-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
@@ -29,13 +31,21 @@
   padding: 20px;
 }
 
+.card-news .item-body__info-title {
+  line-height: 0;
+}
+
 .item-body__star {
   position: absolute;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   right: 0;
   background-color: var(--white);
   border-radius: 0px 0px 0px 3px;
-  padding: 10px;
   cursor: pointer;
 }
 
@@ -51,13 +61,16 @@
 }
 
 .item-body__info-title {
+  margin-bottom: 10px;
+}
+
+.item-body__info-title a {
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 150%;
   color: var(--outer-space);
-  margin-bottom: 10px;
 }
 
 .item-body__info-subtitle {
@@ -68,6 +81,7 @@
   font-size: 15px;
   line-height: 150%;
   color: var(--regent-gray);
+  margin: 0px 0px 0px 0px;
 }
 
 .item-body__footer {
@@ -79,19 +93,22 @@
 .item-body__footer-date {
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .item-body__footer-date span {
-  margin-left: 6px;
-  padding: 0px 6px;
   position: relative;
+  display: inline;
+  margin-left: 6px;
+  margin-bottom: 0;
+  padding: 0px 6px;
 }
 
 .item-body__footer-date span::before {
   content: '';
   display: block;
   position: absolute;
-  top: 3px;
+  top: 6px;
   left: 0;
   width: 1px;
   height: 10px;
@@ -105,6 +122,8 @@
 }
 
 .item-body__footer-action span {
+  display: inline;
+  margin-bottom: 0;
   margin-left: 6px;
 }
 
@@ -147,7 +166,7 @@
   fill: var(--white);
 }
 
-.bg-img .item-body__info-title {
+.bg-img .item-body__info-title a {
   font-family: 'Roboto';
   font-weight: 500;
 }
@@ -179,7 +198,7 @@
   stroke: var(--white);
 }
 
-.bg-img .item-body__info-title {
+.bg-img .item-body__info-title a {
   color: var(--white);
 }
 
@@ -228,6 +247,11 @@
     grid-column: 1 / -1;
     flex-direction: row-reverse;
     height: 206px;
+  }
+
+  .card-promotions .item-body__star {
+    top: 11px;
+    right: 11px;
   }
 
   .card-promotions .card-list__item-body {

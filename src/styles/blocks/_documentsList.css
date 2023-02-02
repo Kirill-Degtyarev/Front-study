@@ -1,0 +1,25 @@
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 0px 0px 0px 0px;
+}
+
+.documents-list li {
+  list-style: none;
+  margin: 0px 0px 0px 0px;
+}
+
+.documents-list__item {
+  line-height: 130% !important;
+  color: var(--white) !important;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .documents-list {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
