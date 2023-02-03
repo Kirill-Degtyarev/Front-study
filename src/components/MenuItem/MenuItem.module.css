@@ -21,7 +21,7 @@
   font-weight: 700 !important;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1280px) {
   .menu-list__item:not(:last-child) {
     border-bottom: 1px solid var(--athens-gray);
     margin: 0px 0px 0px 0px;
