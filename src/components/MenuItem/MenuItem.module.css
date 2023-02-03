@@ -1,0 +1,32 @@
+.menu-list__item {
+  list-style: none;
+  margin: 0px 0px 0px 0px;
+}
+
+.menu-list__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.menu-list__item a {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  color: var(--outer-space);
+}
+
+.active-link {
+  color: var(--cornflower-blue) !important;
+  font-weight: 700 !important;
+}
+
+@media (min-width: 769px) {
+  .menu-list__item:not(:last-child) {
+    border-bottom: 1px solid var(--athens-gray);
+    margin: 0px 0px 0px 0px;
+  }
+  .menu-list__item {
+    padding: 19px 0px 16px 30px;
+  }
+}

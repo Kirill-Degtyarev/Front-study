@@ -13,3 +13,11 @@
     margin-bottom: -50px;
   }
 }
+
+@media (min-width: 1280px) {
+  .article-body {
+    padding: 40px 30px 49px 30px;
+    margin: 0px 0px 0px 0px;
+    width: auto;
+  }
+}
