@@ -1,3 +1,25 @@
-.ddd h1 {
+.page-detailed__body {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.detailed-body__outlet {
+  flex: 0 1 922px;
+}
+
+.detailed-body__menu {
+  display: contents;
+  flex: 0 1 293px;
+  height: 300px;
+}
+
+.outlet__title {
   margin-bottom: 20px;
+}
+
+@media (min-width: 1280px) {
+  .detailed-body__menu {
+    display: flex;
+  }
 }

@@ -15,7 +15,6 @@ const App = () => {
   const [pathName, setPathName] = useState(
     pathname === '/' ? '/news' : pathname,
   );
-
   /**
    * Получение данных и сохранение данных при первом ренедере
    * и изменении показываемых карточек

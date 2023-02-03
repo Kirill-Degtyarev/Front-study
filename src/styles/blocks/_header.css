@@ -48,7 +48,6 @@
 
 .user-info {
   order: 2;
-  margin-left: auto;
 }
 
 .burger-menu {
@@ -69,6 +68,14 @@
   height: calc(100% + 25px);
   width: 1px;
   background-color: var(--athens-gray);
+}
+
+.user-info__burger {
+  margin-left: auto;
+}
+
+.user-info__burger .user-info__name {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -112,5 +119,14 @@
 
   .user-info {
     order: 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .user-info__burger {
+    margin-right: -20px;
+  }
+  .user-info__burger .user-info__name {
+    display: inline;
   }
 }

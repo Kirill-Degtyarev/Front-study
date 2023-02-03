@@ -23,18 +23,15 @@
 
 .main {
   flex: 1 1 auto;
-}
-
-.main__container {
-  padding: 30px 20px 39px 20px;
+  padding: 30px 0px 39px 0px;
 }
 
 @media (min-width: 768px) {
   [class*='__container'] {
     max-width: 1279px;
   }
-  .main__container {
-    padding: 40px 20px 50px 20px;
+  .main {
+    padding: 40px 0px 50px 0px;
   }
 }
 
@@ -43,7 +40,7 @@
     max-width: 1920px;
     padding: 0 100px;
   }
-  .main__container {
-    padding: 60px 100px 70px 100px;
+  .main {
+    padding: 60px 0px 70px 0px;
   }
 }
