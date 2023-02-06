@@ -1,0 +1,151 @@
+.profile-body {
+  width: 100vw;
+  min-height: 100%;
+  margin-left: -20px;
+  margin-bottom: -39px;
+  background-color: var(--white);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.03);
+  padding: 32px 20px 19px 20px;
+}
+
+.form__list {
+  margin: 0px 0px 0px 0px;
+}
+
+.form-list__item {
+  position: relative;
+  list-style: none;
+  padding-bottom: 27px;
+}
+
+.form-list__item:not(:last-child) {
+  margin: 0px 0px 16px 0px;
+}
+
+.form-list__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: 1px;
+  background-color: var(--athens-gray);
+}
+
+/* .form-list__item:nth-child(1) ul li:nth-child(2) {
+  margin-bottom: 12px;
+}
+
+.form-list__item:nth-child(1) ul li:nth-child(4) {
+  margin-bottom: 12px;
+}
+
+.form-list__item:nth-child(2) ul li:nth-child(5) {
+  margin-bottom: 13px;
+}
+
+.form-list__item:nth-child(2) ul li:nth-child(6) {
+  margin-bottom: 12px;
+}
+
+.form-list__item:nth-child(2) {
+  margin-bottom: 16px;
+}
+
+.form-list__item:nth-child(3) h2 {
+  margin-bottom: 5px;
+}
+
+.form-list__item:nth-child(3) {
+  padding-bottom: 24px;
+}
+
+.form-list__item:nth-child(3) ul li:nth-child(1) {
+  margin-bottom: 6px;
+}
+
+.form-list__item:nth-child(3) ul li:nth-child(2) {
+  margin-bottom: 6px;
+}
+
+.form-list__item:nth-child(3) ul li:nth-child(3) {
+  margin-bottom: 6px;
+}
+
+.form-list__item:nth-child(4) h2 {
+  margin-bottom: 5px;
+}
+
+.form-list__item:nth-child(4) ul li:nth-child(1) {
+  margin-bottom: 6px;
+}
+
+.form-list__item:nth-child(4) ul li:nth-child(2) {
+  margin-bottom: 6px;
+}
+
+.form-list__item:nth-child(4) ul li:nth-child(3) {
+  margin-bottom: 6px;
+}
+
+.form-list__item:nth-child(4) ul li:nth-child(4) {
+  margin-bottom: 10px;
+} */
+
+.form-list__item-title {
+  margin-bottom: 8px;
+}
+
+.form-list__item-inputs {
+  margin: 0px 0px 0px 0px;
+}
+
+.form__button {
+  padding-top: 9px;
+}
+
+.form__button input {
+  padding: 9px 10px;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.form__button input:last-child {
+  padding: 9px 9px;
+  margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+  .profile-body {
+    padding: 40px 20px 19px 20px;
+    margin-bottom: -50px;
+  }
+  .form-list__item {
+    padding-bottom: 38px;
+  }
+  .form-list__item:nth-child(2) {
+    padding-bottom: 37px;
+  }
+  .form-list__item:nth-child(3) {
+    padding-bottom: 33px;
+  }
+  .form-list__item:not(:last-child) {
+    margin: 0px 0px 26px 0px;
+  }
+  .form__button {
+    padding-top: 9px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .profile-body {
+    padding: 40px 30px 19px 30px;
+    margin: 0px 0px 0px 0px;
+    min-height: auto;
+    width: auto;
+  }
+  .form-list__item::after {
+    left: -30px;
+    width: calc(100% + 60px);
+  }
+}

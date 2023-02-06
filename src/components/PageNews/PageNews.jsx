@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 import CardItem from '../CardItem/CardItem';
-import Button from '../../UI/Button';
+import Button from '../../UI/Button/Button';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
 
 import styles from './PageNews.module.css';
@@ -120,7 +120,10 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
                   ? styles['button-disabled']
                   : ''
               }`}>
-              <Button onClickHandler={handleChangeCounterItem}>
+              <Button
+                onClickHandler={handleChangeCounterItem}
+                color="blue"
+                type="button">
                 Смотреть ещё
               </Button>
             </div>

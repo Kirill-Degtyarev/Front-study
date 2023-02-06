@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './MenuBurgerButton.module.css';
 import styled from '../Menu/Menu.module.css';
 
@@ -6,6 +7,7 @@ const MenuBurgerButton = () => {
   const [windowWidth, setWindowWidth] = useState(window.screen.width);
   const [path, setPath] = useState(window.location.pathname);
   const ref = useRef(null);
+  const { pathname } = useLocation();
   useEffect(() => {
     window.onresize = () => {
       setWindowWidth(window.screen.width);
@@ -14,7 +16,6 @@ const MenuBurgerButton = () => {
     if (ref.current) {
       changeHeader();
     }
-
     return () => {
       window.onresize = false;
     };

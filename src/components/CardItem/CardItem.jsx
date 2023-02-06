@@ -36,20 +36,6 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
     if (new Date(Number(date)) > currentDate) return 'Предложение активно';
   };
 
-  // const getCountString = (num) => {
-  //   if (bodyInfoRef.current) {
-  //     const currentEl = bodyInfoRef.current;
-  //     const currentElHeight = bodyInfoRef.current.clientHeight;
-  //     const childrenElHeight =
-  //       currentEl.childNodes[0].clientHeight +
-  //       currentEl.childNodes[1].clientHeight;
-  //     const differenceHeight = currentElHeight - childrenElHeight;
-  //     const lineHeight = currentEl.childNodes[1].styles.lineHeight;
-  //     console.log(currentEl.childNodes[1]);
-  //   }
-  // };
-  // getCountString();
-
   const itemClass = classNames(styles['card-list__item'], {
     [styles['bg-img']]: bgImg && itemType === 'news',
     [styles['card-news']]: itemType === 'news',

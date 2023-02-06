@@ -75,7 +75,11 @@
   margin-top: 20px;
 }
 
-.button-disabled div {
+.news-main__button input[type='button'] {
+  width: 100%;
+}
+
+.button-disabled input[type='button'] {
   cursor: not-allowed;
   background-color: var(--periwinkle-gray);
 }
@@ -113,9 +117,7 @@
     align-items: center;
     justify-content: center;
   }
-  .news-main__button div {
-    width: 100%;
-    max-width: 156px;
+  .news-main__button input[type='button'] {
     line-height: 117%;
   }
 }

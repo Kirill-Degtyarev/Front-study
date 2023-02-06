@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "nameBlockInputs": "Общее",
+    "inputs": [
+      {
+        "id": 1,
+        "nameInput": "ФИО",
+        "inputType": "text",
+        "inputName": "fio",
+        "inputId": "fio",
+        "placeholderInput": "ФИО",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 2,
+        "nameInput": "Специализация",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "верстальщик",
+            "label": "Верстальщик"
+          },
+          {
+            "value": "frontend",
+            "label": "Frontend"
+          },
+          {
+            "value": "backend",
+            "label": "Backend"
+          },
+          {
+            "value": "fullstack",
+            "label": "Fullstack"
+          }
+        ],
+        "inputName": "specialization",
+        "inputId": "specialization",
+        "placeholderInput": "",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 3,
+        "nameInput": "Документ",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "выбрать",
+            "label": "Выбрать"
+          },
+          {
+            "value": "выбранный пункт",
+            "label": "Выбранный пункт"
+          },
+          {
+            "value": "не выбран",
+            "label": "Не выбран"
+          },
+          {
+            "value": "hover",
+            "label": "Hover"
+          }
+        ],
+        "inputName": "document",
+        "inputId": "document",
+        "placeholderInput": "",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 4,
+        "nameInput": "Город",
+        "inputType": "text",
+        "inputName": "city",
+        "inputId": "city",
+        "placeholderInput": "Название города",
+        "disabled": true,
+        "checked": false
+      },
+      {
+        "id": 5,
+        "nameInput": "О себе",
+        "inputType": "textarea",
+        "inputName": "aboutMe",
+        "inputId": "aboutMe",
+        "placeholderInput": "...",
+        "disabled": false,
+        "checked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nameBlockInputs": "Контакты",
+    "inputs": [
+      {
+        "id": 6,
+        "nameInput": "Раб. тел.",
+        "inputType": "tel",
+        "inputName": "workPhone",
+        "inputId": "workPhone",
+        "placeholderInput": "...",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 7,
+        "nameInput": "Раб. прямой",
+        "inputType": "tel",
+        "inputName": "workingDirect",
+        "inputId": "workingDirect",
+        "placeholderInput": "+7",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 8,
+        "nameInput": "Мобильный",
+        "inputType": "tel",
+        "inputName": "mobilePhone",
+        "inputId": "mobilePhone",
+        "placeholderInput": "+7",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 9,
+        "nameInput": "Факс",
+        "inputType": "tel",
+        "inputName": "fax",
+        "inputId": "fax",
+        "placeholderInput": "+7",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 10,
+        "nameInput": "Домашний",
+        "inputType": "tel",
+        "inputName": "homePhone",
+        "inputId": "homePhone",
+        "placeholderInput": "+7",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 11,
+        "nameInput": "Email раб.",
+        "inputType": "email",
+        "inputName": "emailWorking",
+        "inputId": "emailWorking",
+        "placeholderInput": "...",
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 12,
+        "nameInput": "Email личн.",
+        "inputType": "email",
+        "inputName": "personalEmail",
+        "inputId": "personalEmail",
+        "placeholderInput": "...",
+        "disabled": false,
+        "checked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nameBlockInputs": "Мое мнение о чекбоксах",
+    "inputs": [
+      {
+        "id": 13,
+        "nameInput": "Неактивен, выбран",
+        "inputType": "checkbox",
+        "inputName": "checkbox",
+        "inputId": "checkboxDisabledActive",
+        "placeholderInput": false,
+        "disabled": true,
+        "checked": true
+      },
+      {
+        "id": 14,
+        "nameInput": "Неактивен, не выбран",
+        "inputType": "checkbox",
+        "inputName": "checkbox",
+        "inputId": "checkboxDisabledInactive",
+        "placeholderInput": false,
+        "disabled": true,
+        "checked": false
+      },
+      {
+        "id": 15,
+        "nameInput": "Я люблю чекбоксы",
+        "inputType": "checkbox",
+        "inputName": "checkbox",
+        "inputId": "checkboxActive",
+        "placeholderInput": false,
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 16,
+        "nameInput": "Я ненавижу чекбоксы",
+        "inputType": "checkbox",
+        "inputName": "checkbox",
+        "inputId": "checkboxInactive",
+        "placeholderInput": false,
+        "disabled": false,
+        "checked": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nameBlockInputs": "Мое мнение о радио-кнопках",
+    "inputs": [
+      {
+        "id": 17,
+        "nameInput": "Неактивна, выбрана",
+        "inputType": "radio",
+        "inputName": "radioDisabled",
+        "inputId": "radioDisabledActive",
+        "placeholderInput": false,
+        "disabled": true,
+        "checked": true
+      },
+      {
+        "id": 18,
+        "nameInput": "Неактивна, не выбрана",
+        "inputType": "radio",
+        "inputName": "radioDisabled",
+        "inputId": "radioDisabledInactive",
+        "placeholderInput": false,
+        "disabled": true,
+        "checked": false
+      },
+      {
+        "id": 19,
+        "nameInput": "Я люблю радио-кнопки",
+        "inputType": "radio",
+        "inputName": "radio",
+        "inputId": "radioActive",
+        "placeholderInput": false,
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 20,
+        "nameInput": "Я ненавижу радио-кнопки",
+        "inputType": "radio",
+        "inputName": "radio",
+        "inputId": "radioInactive",
+        "placeholderInput": false,
+        "disabled": false,
+        "checked": false
+      },
+      {
+        "id": 21,
+        "nameInput": "Комментарий",
+        "inputType": "textarea",
+        "inputName": "comments",
+        "inputId": "comments",
+        "placeholderInput": "...",
+        "disabled": false,
+        "checked": false
+      }
+    ]
+  }
+]

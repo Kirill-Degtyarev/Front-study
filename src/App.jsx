@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import PageDetailed from './components/PageDetailed/PageDetailed';
 import DetailedArticle from './components/DetailedArticle/DetailedArticle';
 import Profile from './components/Profile/Profile';
+import Loader from './components/Loader/Loader';
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,6 +16,7 @@ const App = () => {
   const [pathName, setPathName] = useState(
     pathname === '/' ? '/news' : pathname,
   );
+
   /**
    * Получение данных и сохранение данных при первом ренедере
    * и изменении показываемых карточек
@@ -54,10 +56,7 @@ const App = () => {
           />
         ) : (
           <Route path="/" element={<PageDetailed />}>
-            <Route
-              path="/profile"
-              element={<Profile setPathName={setPathName} />}
-            />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/news/:id" element={<DetailedArticle />} />
           </Route>
         )}
