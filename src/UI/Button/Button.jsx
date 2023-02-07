@@ -14,7 +14,7 @@ const Button = ({ children, onClickHandler, color, type }) => {
             }
           : () => {}
       }
-      defaultValue={children}
+      value={children}
     />
   );
 };

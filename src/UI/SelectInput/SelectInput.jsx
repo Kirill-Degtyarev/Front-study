@@ -17,7 +17,7 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
     option: (styles, { isSelected, isFocused }) => ({
       ...styles,
       padding: '6px 0px 6px 24px',
-      backgroundColor: isSelected || isFocused ? '#f5f5f5' : '#fff',
+      background: isSelected ? '#f5f5f5' : isFocused ? '#f5f5f5' : '',
       color: '#2E3640',
       fontFamily: 'PT Sans',
       fontSize: '15px',
@@ -30,10 +30,17 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
       width: '325px',
       height: '140px',
       borderRadius: '3px',
+      backgroundColor: '#fff',
       boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.03)',
       border: '1px solid #E5E6E9',
       top: '-27px',
       left: '-25px',
+    }),
+    indicatorsContainer: (styles) => ({
+      ...styles,
+      width: '11px',
+      height: '10px',
+      marginTop: '6px',
     }),
   };
   return (

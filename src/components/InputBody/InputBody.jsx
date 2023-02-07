@@ -53,7 +53,15 @@ const InputBody = ({ input, formik }) => {
               className={styles['input-body__title']}>
               {input.nameInput}
             </label>
-            <div className={styles['input-body__input']}>
+            <div
+              className={`${styles['input-body__input']} ${
+                formik.errors[input.inputName] ? 'input-invalid' : ''
+              }`}
+              data-error={
+                formik.errors[input.inputName]
+                  ? formik.errors[input.inputName]
+                  : ''
+              }>
               {inputItem(input.inputType)}
             </div>
           </>

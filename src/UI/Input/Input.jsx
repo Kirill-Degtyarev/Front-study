@@ -7,13 +7,13 @@ const Input = ({ inputData, formik }) => {
     const nameInput = e.target.name;
     const typeInput = e.target.type;
     if (typeInput === 'text' && nameInput === 'fio') {
-      ActionValidate.onValidationFullName(e);
+      ActionValidate.onValidationFullName(e, formik);
     }
     if (typeInput === 'tel') {
-      ActionValidate.onValidationTel(e);
+      ActionValidate.onValidationTel(e, formik);
     }
     if (typeInput === 'email') {
-      ActionValidate.onValidationEmail(e);
+      ActionValidate.onValidationEmail(e, formik);
     }
   };
 
@@ -36,16 +36,18 @@ const Input = ({ inputData, formik }) => {
 
   if (inputData.inputType === 'text') {
     return (
-      <input
-        type="text"
-        name={inputData.inputName}
-        id={inputData.inputId}
-        disabled={inputData.disabled}
-        placeholder={inputData.placeholderInput}
-        value={formik.values[inputData.inputName]}
-        onChange={formik.handleChange}
-        onBlur={(e) => onValidationInput(e)}
-      />
+      <>
+        <input
+          type="text"
+          name={inputData.inputName}
+          id={inputData.inputId}
+          disabled={inputData.disabled}
+          placeholder={inputData.placeholderInput}
+          value={formik.values[inputData.inputName]}
+          onChange={formik.handleChange}
+          onBlur={(e) => onValidationInput(e)}
+        />
+      </>
     );
   }
   if (inputData.inputType === 'tel') {

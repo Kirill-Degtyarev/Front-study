@@ -9,7 +9,9 @@ const Textarea = ({ inputData, formik }) => {
       onChange={(e) => {
         ActionValidate.onValidationTextArea(e, 'change', formik, inputData);
       }}
-      onBlur={(e) => ActionValidate.onValidationTextArea(e, 'blur')}
+      onBlur={(e) =>
+        ActionValidate.onValidationTextArea(e, 'blur', formik, inputData)
+      }
       onClick={(e) =>
         ActionValidate.onValidationTextArea(e, 'change', formik, inputData)
       }></textarea>

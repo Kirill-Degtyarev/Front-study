@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import InputBody from '../InputBody/InputBody';
 import Button from '../../UI/Button/Button';
@@ -9,10 +10,12 @@ import styles from './Profile.module.css';
 
 const Profile = () => {
   const formik = useFormik({
+    validateOnChange: false,
+    validateOnBlur: false,
     initialValues: {
       fio: '',
-      specialization: '',
-      document: '',
+      specialization: 'верстальщик',
+      document: 'выбрать',
       city: '',
       aboutMe: '',
       workPhone: '',
@@ -22,13 +25,50 @@ const Profile = () => {
       homePhone: '',
       emailWorking: '',
       personalEmail: '',
-      radio: '',
-      checkbox: [],
+      radio: 'radioDisabledActive',
+      checkbox: ['checkboxDisabledActive'],
+      comments: '',
     },
+    validationSchema: Yup.object({
+      fio: DataInputs[0].inputs[0].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      city: DataInputs[0].inputs[3].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      aboutMe: DataInputs[0].inputs[4].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      workPhone: DataInputs[1].inputs[0].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      workingDirect: DataInputs[1].inputs[1].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      mobilePhone: DataInputs[1].inputs[2].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      fax: DataInputs[1].inputs[3].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      homePhone: DataInputs[1].inputs[4].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      emailWorking: DataInputs[1].inputs[5].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      personalEmail: DataInputs[1].inputs[6].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+      comments: DataInputs[3].inputs[4].required
+        ? Yup.string().required('Поле обязательно для заполнения')
+        : '',
+    }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
   return (
     <div className={styles['profile-body']}>
       <form

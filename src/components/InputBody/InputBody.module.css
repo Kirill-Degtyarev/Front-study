@@ -4,7 +4,7 @@
 }
 
 .inputs-item:not(:last-child) {
-  margin-bottom: 13.5px;
+  margin-bottom: 13px;
 }
 
 .input-body {
@@ -107,6 +107,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
+  line-height: 100%;
   -webkit-user-drag: none;
 }
 
@@ -141,6 +142,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
+  line-height: 100%;
   -webkit-user-drag: none;
 }
 
