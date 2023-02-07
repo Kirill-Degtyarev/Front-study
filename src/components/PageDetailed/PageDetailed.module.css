@@ -5,17 +5,21 @@
 }
 
 .detailed-body__outlet {
-  flex: 0 1 922px;
+  flex: 0 1 calc(100%);
 }
 
 .detailed-body__menu {
   display: contents;
-  flex: 0 1 293px;
+  min-width: 293px;
   height: 300px;
 }
 
 .outlet__title {
   margin-bottom: 20px;
+}
+
+.outlet__body {
+  height: 100%;
 }
 
 @media (min-width: 1280px) {

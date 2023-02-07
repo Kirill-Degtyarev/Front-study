@@ -46,6 +46,10 @@ textarea {
   font-family: inherit;
 }
 
+input:disabled {
+  background-color: transparent;
+}
+
 input::-ms-clear {
   display: none;
 }

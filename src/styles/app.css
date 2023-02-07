@@ -26,6 +26,31 @@
   padding: 30px 0px 39px 0px;
 }
 
+.input-invalid {
+  margin-bottom: 24px;
+}
+
+.input-invalid::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: var(--froly);
+}
+
+.input-invalid::before {
+  content: attr(data-error) ' ';
+  position: absolute;
+  height: 10px;
+  bottom: -19px;
+  left: 0;
+  line-height: 100%;
+  font-size: 14px;
+  color: var(--froly);
+}
+
 @media (min-width: 768px) {
   [class*='__container'] {
     max-width: 1279px;

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+
 import Menu from '../Menu/Menu';
 
 import styles from './PageDetailed.module.css';
 
 const PageDetailed = () => {
+  const { pathname } = useLocation();
   return (
     <section className={styles['page-detailed']}>
       <div className={styles['page-detailed__body']}>
@@ -12,7 +14,13 @@ const PageDetailed = () => {
           <Menu />
         </div>
         <div className={styles['detailed-body__outlet']}>
-          <h1 className={styles.outlet__title}>Заголовок&nbsp;страницы</h1>
+          <h1 className={styles.outlet__title}>
+            {pathname === '/profile' ? (
+              <>Редактировать профиль</>
+            ) : (
+              <>Заголовок страницы</>
+            )}
+          </h1>
           <div className={styles.outlet__body}>
             <Outlet />
           </div>

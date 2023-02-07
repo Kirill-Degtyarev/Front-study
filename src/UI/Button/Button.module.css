@@ -1,0 +1,22 @@
+.button {
+  padding: 9px 38px 10px 38px;
+  border-radius: 3px;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 130%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.blue {
+  border: 1px solid var(--royal-blue);
+  background: var(--royal-blue-light);
+  color: var(--white);
+}
+
+.white {
+  color: var(--regent-gray);
+  background-color: transparent;
+}
