@@ -14,13 +14,13 @@
   justify-content: space-between;
 }
 
-.input-body input {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 100%;
-  color: #2e3640;
+.input-body input:disabled {
+  filter: brightness(1);
+  cursor: not-allowed;
+}
+
+.input-disabled label {
+  color: var(--silver);
 }
 
 .input-body textarea {
@@ -45,13 +45,14 @@
 }
 
 .input-body__title {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
+  line-height: 19px !important;
   color: var(--regent-gray);
   cursor: pointer;
+}
+
+.input-body input {
+  line-height: 100%;
+  color: var(--outer-space);
 }
 
 .input-body__input {
@@ -70,40 +71,32 @@
   background-color: var(--cornflower-blue);
 }
 
-.input-body__input input[type='text'] {
+.input-body__input input[type='text'],
+input[type='email'] {
   width: 100%;
 }
 
-.input-body__input input[type='email'] {
-  width: 100%;
-}
-
+.input-radio .input-body,
 .input-checkbox .input-body {
   flex: none;
 }
 
+.input-radio .input-body label,
 .input-checkbox .input-body label {
   cursor: pointer;
   white-space: nowrap;
 }
 
-.input-radio .input-body {
-  flex: none;
-}
-
-.input-radio .input-body label {
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.input-body input[type='radio'] {
+.input-body input[type='radio'],
+.input-body input[type='checkbox'] {
   position: absolute;
   opacity: 0;
   z-index: -1;
   margin-right: 10px;
 }
 
-.input-body input[type='radio'] + label {
+.input-body input[type='radio'] + label,
+.input-body input[type='checkbox'] + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -131,21 +124,6 @@
   background-image: url(../../assets/svg/circle.svg);
 }
 
-.input-body input[type='checkbox'] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-  margin-right: 10px;
-}
-
-.input-body input[type='checkbox'] + label {
-  display: inline-flex;
-  align-items: center;
-  user-select: none;
-  line-height: 100%;
-  -webkit-user-drag: none;
-}
-
 .input-body input[type='checkbox'] + label::before {
   content: '';
   display: inline-block;
@@ -166,37 +144,14 @@
   background-image: url(../../assets/svg/checkMark.svg);
 }
 
-.input-disabled label {
-  color: var(--silver);
+.input-body input[type='checkbox']:disabled + label::before,
+.input-body input[type='radio']:disabled + label::before {
+  filter: grayscale(1);
   cursor: not-allowed;
 }
 
-.input-disabled input {
-  cursor: not-allowed;
-}
-
-.input-disabled input[type='text']::placeholder {
-  color: var(--silver);
-  cursor: not-allowed;
-}
-
-.input-disabled input[type='tel']::placeholder {
-  color: var(--silver);
-  cursor: not-allowed;
-}
-
-.input-disabled input[type='email']::placeholder {
-  color: var(--silver);
-  cursor: not-allowed;
-}
-
-.input-disabled input[type='checkbox'] + label::before {
-  filter: opacity(0.5);
-  cursor: not-allowed;
-}
-
-.input-disabled input[type='radio'] + label::before {
-  filter: opacity(0.5);
+.input-body input[type='checkbox']:disabled + label,
+.input-body input[type='radio']:disabled + label {
   cursor: not-allowed;
 }
 

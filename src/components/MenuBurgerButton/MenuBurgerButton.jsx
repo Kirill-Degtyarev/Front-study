@@ -7,7 +7,7 @@ const MenuBurgerButton = () => {
   const [windowWidth, setWindowWidth] = useState(window.screen.width);
   const [path, setPath] = useState(window.location.pathname);
   const ref = useRef(null);
-  const { pathname } = useLocation();
+
   useEffect(() => {
     window.onresize = () => {
       setWindowWidth(window.screen.width);

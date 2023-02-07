@@ -26,6 +26,12 @@
   padding: 30px 0px 39px 0px;
 }
 
+.main-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .input-invalid {
   margin-bottom: 24px;
 }

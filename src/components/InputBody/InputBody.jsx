@@ -50,7 +50,9 @@ const InputBody = ({ input, formik }) => {
           <>
             <label
               htmlFor={input.inputId}
-              className={styles['input-body__title']}>
+              className={
+                styles['input-body__title'] + ' ' + 'fz15-regent-gray'
+              }>
               {input.nameInput}
             </label>
             <div

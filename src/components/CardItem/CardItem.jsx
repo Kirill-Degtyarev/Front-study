@@ -5,36 +5,12 @@ import Dotdotdot from 'react-dotdotdot';
 import SvgGenerator from '../../SvgGenerator/SvgGenerator';
 
 import styles from './CardItem.module.css';
+import ActionDate from '../../Action/ActionDate';
 
 const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
   const [isFavorites, setIsFavorites] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const bodyInfoRef = useRef(null);
-
-  /**
-   * Форматируем дату, которая нам приходит с бэка, в привычную для нас
-   **/
-  const getDate = (date) => {
-    const newDate = new Date(Number(date));
-    const day =
-      newDate.getDate() < 10 ? '0' + newDate.getDate() : newDate.getDate();
-    const month =
-      newDate.getMonth() < 10
-        ? '0' + (newDate.getMonth() + 1)
-        : newDate.getMonth() + 1;
-    const year = newDate.getFullYear();
-    const fullDate = day + '.' + month + '.' + year;
-    return fullDate;
-  };
-
-  /**
-   * Получение статуса акции на текущий момент
-   **/
-  const getStatus = (date) => {
-    const currentDate = new Date();
-    if (new Date(Number(date)) < currentDate) return 'Завершено';
-    if (new Date(Number(date)) > currentDate) return 'Предложение активно';
-  };
 
   const itemClass = classNames(styles['card-list__item'], {
     [styles['bg-img']]: bgImg && itemType === 'news',
@@ -54,7 +30,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
 
   return (
     <li className={itemClass}>
-      <div className={styles['card-list__item-img']}>
+      <div className={styles['item-img']}>
         {itemType === 'news' ? (
           <Link to={`/news/${dataItem.id}`}>
             <img
@@ -69,7 +45,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
           />
         )}
       </div>
-      <div className={styles['card-list__item-body']}>
+      <div className={styles['item-body']}>
         <div
           className={`${styles['item-body__star']} ${
             isFavorites ? styles['favorites-card'] : ''
@@ -98,15 +74,15 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
             className={
               styles['item-body__footer-date'] + ' ' + 'fz13-regent-gray'
             }>
-            {getDate(dataItem.pubDate)}
+            {ActionDate.getFullDate(dataItem.pubDate, 'dd/mm/yy')}
             {itemType === 'promotions' && (
-              <span>{getStatus(dataItem.pubDate)}</span>
+              <span>{ActionDate.getStatusDate(dataItem.pubDate)}</span>
             )}
           </span>
           <div className={styles['item-body__footer-action']}>
             <div
-              className={`${styles['footer-action__like']} ${
-                styles['footer-action']
+              className={`${styles['item-action__like']} ${
+                styles['item-action']
               } ${isLiked ? styles['liked-card'] : ''}`}
               onClick={() => {
                 setIsLiked((prev) => !prev);
@@ -117,9 +93,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
             {itemType === 'news' && (
               <div
                 className={
-                  styles['footer-action__comments'] +
-                  ' ' +
-                  styles['footer-action']
+                  styles['item-action__comments'] + ' ' + styles['item-action']
                 }>
                 <SvgGenerator id="comments" />
                 <span className={'fz13-regent-gray'}>35</span>
@@ -127,7 +101,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
             )}
             <div
               className={
-                styles['footer-action__view'] + ' ' + styles['footer-action']
+                styles['item-action__view'] + ' ' + styles['item-action']
               }>
               <SvgGenerator id="view" />
               <span className={'fz13-regent-gray'}>50</span>
@@ -135,7 +109,6 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
           </div>
         </div>
       </div>
-      {/* </NavLink> */}
     </li>
   );
 };

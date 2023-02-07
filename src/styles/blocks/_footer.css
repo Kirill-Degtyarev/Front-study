@@ -81,7 +81,7 @@
   }
   .documents-list {
     flex-direction: row;
-    gap: 30px;
+    gap: 31.5px;
   }
   .documents::after {
     content: none;

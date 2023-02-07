@@ -1,4 +1,7 @@
 export default class ActionValidate {
+  /**
+   * Валидация ФИО по количеству символов и содержанию цифр или спецсимволов
+   */
   static onValidationFullName(e, formik) {
     const selfItem = e.target;
     const NAME_REGEXP = /^[a-zа-яЁё\s]+$/i;
@@ -27,6 +30,9 @@ export default class ActionValidate {
       }
     }
   }
+  /**
+   * Валидация номера телефона по количеству символов и неверному формату
+   */
   static onValidationTel(e, formik) {
     const selfItem = e.target;
     const textErrorReg = 'Номер телефона должен быть вида "+7 (999) 999-99-99"';
@@ -53,6 +59,9 @@ export default class ActionValidate {
       }
     }
   }
+  /**
+   * Валидация Email по количеству символов и неверному формату
+   */
   static onValidationEmail(e, formik) {
     const selfItem = e.target;
     const EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -80,8 +89,11 @@ export default class ActionValidate {
       }
     }
   }
+  /**
+   * Валидация поля ввода по количеству символов
+   */
   static onValidationTextArea(e, handler, formik, inputData) {
-    const textErrorLen = 'Поле обязателено для заполнения';
+    const textErrorLen = 'Поле обязательно для заполнения';
     if (handler === 'change') {
       formik.values[inputData.inputName] = e.target.value;
       e.target.style.lineHeight = '130%';

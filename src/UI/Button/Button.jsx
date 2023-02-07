@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Button.module.css';
 
-const Button = ({ children, onClickHandler, color, type }) => {
+const Button = ({ children, onClickHandler, color, type, disabled }) => {
   return (
     <input
       type={type}
@@ -15,6 +15,7 @@ const Button = ({ children, onClickHandler, color, type }) => {
           : () => {}
       }
       value={children}
+      disabled={disabled}
     />
   );
 };
