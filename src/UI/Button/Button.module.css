@@ -20,3 +20,8 @@
   color: var(--regent-gray);
   background-color: transparent;
 }
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: var(--periwinkle-gray);
+}

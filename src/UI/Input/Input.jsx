@@ -46,6 +46,7 @@ const Input = ({ inputData, formik }) => {
           value={formik.values[inputData.inputName]}
           onChange={formik.handleChange}
           onBlur={(e) => onValidationInput(e)}
+          className="fz15-regent-gray"
         />
       </>
     );
@@ -64,6 +65,7 @@ const Input = ({ inputData, formik }) => {
           id={inputData.inputId}
           disabled={inputData.disabled}
           placeholder={inputData.placeholderInput}
+          className="fz15-regent-gray"
         />
       </ReactInputMask>
     );
@@ -79,6 +81,7 @@ const Input = ({ inputData, formik }) => {
         onBlur={(e) => onValidationInput(e)}
         value={formik.values[inputData.inputName]}
         onChange={formik.handleChange}
+        className="fz15-regent-gray"
       />
     );
   }
@@ -95,6 +98,7 @@ const Input = ({ inputData, formik }) => {
               onChangeCheckbox(e);
             }}
             checked
+            className="fz15-regent-gray"
           />
         ) : (
           <input
@@ -105,6 +109,7 @@ const Input = ({ inputData, formik }) => {
               onChangeCheckbox(e);
             }}
             disabled={inputData.disabled}
+            className="fz15-regent-gray"
           />
         )}
       </>
@@ -123,6 +128,7 @@ const Input = ({ inputData, formik }) => {
             }}
             checked
             disabled={inputData.disabled}
+            className="fz15-regent-gray"
           />
         ) : (
           <input
@@ -133,6 +139,7 @@ const Input = ({ inputData, formik }) => {
               onChangeRadio(e);
             }}
             disabled={inputData.disabled}
+            className="fz15-regent-gray"
           />
         )}
       </>

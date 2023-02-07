@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.search-body__icon a svg {
+  margin-bottom: -2px;
+}
+
 .search-body__input {
   width: 100%;
 }

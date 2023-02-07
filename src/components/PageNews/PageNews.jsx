@@ -30,24 +30,25 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
    * Сортировка данных по времени и колличеству
    */
 
-  const sortCard =
-    data &&
-    data
-      .sort((a, b) => {
-        return new Date(Number(a.pubDate)) - new Date(Number(b.pubDate));
-      })
-      .slice(0, counterItem)
-      .map((item, index) => (
-        <CardItem
-          key={item.id}
-          indexId={index < 9 ? index : (index + 1) % 10}
-          dataItem={item}
-          bgImg={(index + 1) % 3 === 0}
-          isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
-          itemType={itemType}
-        />
-      ));
+  const sortCard = data
+    ?.sort((a, b) => {
+      return new Date(Number(a.pubDate)) - new Date(Number(b.pubDate));
+    })
+    .slice(0, counterItem)
+    .map((item, index) => (
+      <CardItem
+        key={item.id}
+        indexId={index < 9 ? index : (index + 1) % 10}
+        dataItem={item}
+        bgImg={(index + 1) % 3 === 0}
+        isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
+        itemType={itemType}
+      />
+    ));
 
+  /**
+   * Loader для карточек
+   */
   const skeleton = [...new Array(5)].map((_, index) => (
     <li className={styles.skeleton__body} key={index}>
       <CardSkeleton />
@@ -57,7 +58,6 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
   /**
    * Увеличение показываемых новостей
    */
-
   const handleChangeCounterItem = () => {
     if (counterItem < data.length) setCounterItem((prev) => prev + 5);
   };
@@ -66,12 +66,12 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
     <section className={styles.page__news}>
       <div className={styles.news__body}>
         <div className={styles.news__top}>
-          <h1 className={styles['news__top-title']}>
+          <h1 className={styles['news-top__title']}>
             Получите <span>максимум</span> от отдела продаж
           </h1>
           <p
             className={
-              'fz15-regent-gray' + ' ' + styles['news__top-description']
+              'fz15-regent-gray' + ' ' + styles['news-top__description']
             }>
             amoCRM — это полный набор инструментов, которые раскроют потенциал
             вашего отдела продаж и повысят его эффективность. Считается лучшей
@@ -108,22 +108,18 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
               </li>
             </ul>
           </div>
-          <div className={styles['news-main__body']}>
+          <div className={styles['news-main__cards']}>
             <ul className={styles['card-list']}>
               {isLoaded ? sortCard : skeleton}
             </ul>
           </div>
           {data && (counterItem < data.length || itemType === 'promotions') && (
-            <div
-              className={`${styles['news-main__button']} ${
-                itemType === 'promotions' && counterItem > data.length
-                  ? styles['button-disabled']
-                  : ''
-              }`}>
+            <div className={styles['news-main__button']}>
               <Button
                 onClickHandler={handleChangeCounterItem}
                 color="blue"
-                type="button">
+                type="button"
+                disabled={itemType === 'promotions'}>
                 Смотреть ещё
               </Button>
             </div>

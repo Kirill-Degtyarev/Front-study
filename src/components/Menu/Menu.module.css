@@ -50,6 +50,7 @@
 
 .menu-body__header-button {
   padding: 2.5px;
+  margin-right: -2px;
   cursor: pointer;
 }
 
@@ -62,14 +63,14 @@
   flex: 1 1 100%;
 }
 
-.menu-list {
-  margin: 0px 0px 0px 0px;
-  line-height: 150%;
-}
-
 .menu-body__footer {
   display: flex;
   justify-content: flex-end;
+}
+
+.menu-list {
+  margin: 0px 0px 0px 0px;
+  line-height: normal;
 }
 
 @media (min-width: 1280px) {

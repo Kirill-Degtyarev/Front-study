@@ -92,10 +92,10 @@ const Profile = () => {
           </ul>
         </div>
         <div className={styles.form__button}>
-          <Button color="blue" type="submit">
+          <Button color="blue" type="submit" disabled={false}>
             Сохранить
           </Button>
-          <Button color="white" type="reset">
+          <Button color="white" type="reset" disabled={false}>
             Отмена
           </Button>
         </div>

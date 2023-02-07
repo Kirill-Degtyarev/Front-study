@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import SvgGenerator from '../../SvgGenerator/SvgGenerator';
 import MenuItem from '../MenuItem/MenuItem';
 
@@ -13,29 +13,29 @@ const MENU_ITEM = [
 ];
 
 const Menu = () => {
-  const closeMenu = (e) => {
-    const currentEl = e.currentTarget;
-    const menuBody = currentEl.parentNode.parentNode.parentNode;
-    if (menuBody.classList.contains(styles['menu-mobile'])) {
-      menuBody.classList.remove(styles['menu-mobile']);
+  const menuBody = useRef(null);
+
+  const closeMenu = () => {
+    if (menuBody.current.classList.contains(styles['menu-mobile'])) {
+      menuBody.current.classList.remove(styles['menu-mobile']);
     }
   };
 
   return (
-    <div className={styles.menu} id="menu">
+    <div className={styles.menu} id="menu" ref={menuBody}>
       <div className={styles.menu__body}>
         <div className={styles['menu-body__header']}>
           <h2 className={styles['menu-body__header-title']}>Меню раздела</h2>
           <div
             className={styles['menu-body__header-button']}
-            onClick={(e) => closeMenu(e)}>
+            onClick={closeMenu}>
             <SvgGenerator id="close" />
           </div>
         </div>
         <div className={styles['menu-body__main']}>
           <ul className={styles['menu-list']}>
             {MENU_ITEM.map((item) => (
-              <MenuItem key={item.id} item={item} />
+              <MenuItem key={item.id} item={item} closeMenu={closeMenu} />
             ))}
           </ul>
         </div>

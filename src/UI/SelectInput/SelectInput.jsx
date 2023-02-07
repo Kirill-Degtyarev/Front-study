@@ -17,7 +17,11 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
     option: (styles, { isSelected, isFocused }) => ({
       ...styles,
       padding: '6px 0px 6px 24px',
-      background: isSelected ? '#f5f5f5' : isFocused ? '#f5f5f5' : '',
+      background: isSelected
+        ? 'url(src/assets/svg/checkMarkSelect.svg) no-repeat 5px center #f5f5f5'
+        : isFocused
+        ? '#f5f5f5'
+        : '#ffffff',
       color: '#2E3640',
       fontFamily: 'PT Sans',
       fontSize: '15px',
