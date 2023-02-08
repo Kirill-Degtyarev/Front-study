@@ -8,7 +8,7 @@ export default class ActionValidate {
     const textErrorReg = 'ФИО не должно содержать цифры и спецсимволы';
     const textErrorLen = 'Поле обязательно для заполнения';
 
-    if (selfItem.value.length === 0) {
+    if (selfItem.value.trim().length === 0) {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
       formik.errors.fio = textErrorLen;
@@ -37,7 +37,7 @@ export default class ActionValidate {
     const selfItem = e.target;
     const textErrorReg = 'Номер телефона должен быть вида "+7 (999) 999-99-99"';
     const textErrorLen = 'Поле обязательно для заполнения';
-    if (selfItem.value === '') {
+    if (selfItem.value.trim() === '') {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
       formik.errors[e.target.id] = textErrorLen;
@@ -67,7 +67,7 @@ export default class ActionValidate {
     const EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     const textErrorReg = 'Email имеет некорректный вид';
     const textErrorLen = 'Поле обязательно для заполнения';
-    if (selfItem.value === '') {
+    if (selfItem.value.trim() === '') {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
       formik.errors[e.target.id] = textErrorLen;
@@ -102,7 +102,7 @@ export default class ActionValidate {
     if (handler === 'blur') {
       e.target.style.height = '19px';
       e.target.scrollTop = 0;
-      if (e.target.value === '') {
+      if (e.target.value.trim() === '') {
         e.target.parentNode.classList.add('input-invalid');
         e.target.parentNode.dataset.error = textErrorLen;
         formik.errors[inputData.inputName] = textErrorLen;

@@ -157,6 +157,7 @@ blockquote {
   border-radius: 3px;
   border-left: 5px solid var(--sail);
   margin-bottom: 20px;
+  margin-top: -1px;
 }
 
 blockquote p {

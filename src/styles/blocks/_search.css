@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.search-body__input input[type='search'] {
+.search-body__input input[type='text'] {
   width: 100%;
 }
 

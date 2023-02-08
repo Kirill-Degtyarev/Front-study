@@ -1,13 +1,13 @@
 @import url('normalize.css');
 @import url('./_variables.css');
 @import url('./_normalize.css');
+@import url('./_generic.css');
 @import url('./_fonts.css');
 @import url('../styles/blocks/_header.css');
 @import url('../styles/blocks/_user.css');
 @import url('../styles/blocks/_search.css');
 @import url('../styles/blocks/_footer.css');
 @import url('../styles/blocks/_documentsList.css');
-@import url('./_generic.css');
 
 .wrapper {
   display: flex;
@@ -62,7 +62,7 @@
     max-width: 1279px;
   }
   .main {
-    padding: 40px 0px 50px 0px;
+    padding: 40px 0px 51px 0px;
   }
 }
 

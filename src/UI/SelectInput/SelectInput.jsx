@@ -3,6 +3,14 @@ import Select from 'react-select';
 
 const SelectInput = ({ options, isDisabled, formik, inputName }) => {
   const selectStyles = {
+    container: (styles) => ({
+      ...styles,
+      width: '100%',
+    }),
+    valueContainer: (styles) => ({
+      ...styles,
+      flex: 'none',
+    }),
     control: (styles) => ({
       ...styles,
       fontFamily: 'PT Sans',
@@ -13,6 +21,7 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
       fontWeight: 400,
       lineHeight: '19px',
       cursor: 'pointer',
+      justifyContent: 'flex-start',
     }),
     option: (styles, { isSelected, isFocused }) => ({
       ...styles,
@@ -31,13 +40,13 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
     }),
     menuList: (styles) => ({
       ...styles,
-      width: '325px',
+      width: '108%',
       height: '140px',
       borderRadius: '3px',
       backgroundColor: '#fff',
       boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.03)',
       border: '1px solid #E5E6E9',
-      top: '-27px',
+      top: '-26px',
       left: '-25px',
     }),
     indicatorsContainer: (styles) => ({

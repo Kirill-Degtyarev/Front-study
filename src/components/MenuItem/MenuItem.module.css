@@ -15,6 +15,11 @@
   font-size: 15px;
   line-height: 130%;
   color: var(--outer-space);
+  transition: 0.3s ease all;
+}
+
+.menu-list__item a:hover {
+  color: var(--cornflower-blue);
 }
 
 .active-link {

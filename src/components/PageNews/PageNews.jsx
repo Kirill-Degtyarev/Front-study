@@ -71,7 +71,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
           </h1>
           <p
             className={
-              'fz15-regent-gray' + ' ' + styles['news-top__description']
+              styles['news-top__description'] + ' ' + 'fz15-regent-gray'
             }>
             amoCRM — это полный набор инструментов, которые раскроют потенциал
             вашего отдела продаж и повысят его эффективность. Считается лучшей
