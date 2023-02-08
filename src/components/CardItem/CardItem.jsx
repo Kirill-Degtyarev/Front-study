@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import Dotdotdot from 'react-dotdotdot';
@@ -10,7 +10,37 @@ import ActionDate from '../../Action/ActionDate';
 const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
   const [isFavorites, setIsFavorites] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const [lines, setLines] = useState(0);
   const bodyInfoRef = useRef(null);
+
+  useEffect(() => {
+    if (bodyInfoRef.current) {
+      const isElementBg =
+        bodyInfoRef.current.parentNode.parentNode.classList.contains(
+          styles['bg-img'],
+        );
+      const infoBodyHeight = bodyInfoRef.current.offsetHeight;
+      const descriptionHeight = bodyInfoRef.current.children[1].offsetHeight;
+      const titleHeight = bodyInfoRef.current.children[0].offsetHeight;
+      const counterLine = isElementBg
+        ? Math.round(descriptionHeight / 18)
+        : Math.round(descriptionHeight / 22);
+      const extraLines = isElementBg
+        ? Math.ceil(
+            Math.abs((infoBodyHeight - titleHeight - descriptionHeight) / 22),
+          ) + 1
+        : Math.ceil(
+            Math.abs((infoBodyHeight - titleHeight - descriptionHeight) / 22),
+          );
+
+      if (
+        counterLine - extraLines > 0 &&
+        infoBodyHeight - titleHeight - descriptionHeight < 0
+      ) {
+        setLines(counterLine - extraLines);
+      }
+    }
+  }, []);
 
   const itemClass = classNames(styles['card-list__item'], {
     [styles['bg-img']]: bgImg && itemType === 'news',
@@ -63,7 +93,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
               dataItem.title
             )}
           </h2>
-          <Dotdotdot clamp={3}>
+          <Dotdotdot clamp={lines}>
             <p className={styles['item-body__info-subtitle']}>
               {dataItem.previewtext}
             </p>
