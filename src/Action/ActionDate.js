@@ -18,7 +18,7 @@ export default class ActionDate {
    * Функция возвращает дату в нужном формате
    */
   static getFullDate(date, modifer) {
-    const newDate = new Date(Number(date));
+    const newDate = new Date(Number(date * 1000));
     let fullDate = null,
       day = null,
       month = null,

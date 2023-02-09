@@ -67,15 +67,15 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
       <div className={styles.news__body}>
         <div className={styles.news__top}>
           <h1 className={styles['news-top__title']}>
-            Получите <span>максимум</span> от отдела продаж
+            Получите <span>максимум</span> от отдела продаж
           </h1>
           <p
             className={
               styles['news-top__description'] + ' ' + 'fz15-regent-gray'
             }>
-            amoCRM — это полный набор инструментов, которые раскроют потенциал
-            вашего отдела продаж и повысят его эффективность. Считается лучшей
-            CRM-системой по версии&nbsp;
+            amoCRM — это полный набор инструментов, которые раскроют потенциал
+            вашего отдела продаж и повысят его эффективность. Считается лучшей
+            CRM-системой по версии&nbsp;
             <a href="https://crmrating.ru/" target="_blank">
               crmrating.ru
             </a>
@@ -119,7 +119,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
                 onClickHandler={handleChangeCounterItem}
                 color="blue"
                 type="button"
-                disabled={itemType === 'promotions'}>
+                disabled={counterItem > data.length}>
                 Смотреть ещё
               </Button>
             </div>

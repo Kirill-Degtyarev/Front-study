@@ -27,7 +27,7 @@
 }
 
 .news-top__description {
-  color: var(--outer-space);
+  color: var(--outer-space) !important;
   margin: 0px 0px 0px 0px;
   line-height: 154% !important;
 }
@@ -121,6 +121,7 @@
     grid-gap: 20px;
   }
   .news-main__button {
+    margin-top: 19px;
     display: flex;
     align-items: center;
     justify-content: center;

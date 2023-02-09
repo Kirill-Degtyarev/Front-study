@@ -20,7 +20,7 @@ const Input = ({ inputData, formik }) => {
   const onChangeCheckbox = (e) => {
     const i = formik.values.checkbox.indexOf(e.target.id);
     if (i === -1) {
-      formik.values.checkbox.push(inputData.inputId);
+      formik.values.checkbox.push(inputData.nameInput);
     } else {
       formik.values.checkbox.splice(i, 1);
     }
@@ -28,7 +28,7 @@ const Input = ({ inputData, formik }) => {
 
   const onChangeRadio = (e) => {
     if (e.target.checked) {
-      formik.values.radio = inputData.inputId;
+      formik.values.radio = inputData.nameInput;
     } else {
       formik.values.radio = '';
     }

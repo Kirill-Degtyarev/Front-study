@@ -25,8 +25,8 @@ const Profile = () => {
       homePhone: '',
       emailWorking: '',
       personalEmail: '',
-      radio: 'radioDisabledActive',
-      checkbox: ['checkboxDisabledActive'],
+      radio: 'Неактивна, выбрана',
+      checkbox: ['Неактивен, выбран'],
       comments: '',
     },
     validationSchema: Yup.object({
