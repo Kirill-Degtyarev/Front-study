@@ -5,7 +5,7 @@ const CardSkeleton = (props) => {
   return (
     <ContentLoader
       speed={2}
-      width={335}
+      width="100%"
       height={369}
       viewBox="0 0 335 369"
       backgroundColor="#e0e0e0"

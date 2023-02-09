@@ -150,6 +150,10 @@
   cursor: pointer;
 }
 
+/* .item-action svg {
+  width: auto;
+} */
+
 .liked-card svg path,
 .item-action__like:hover svg path {
   fill: var(--regent-gray);
