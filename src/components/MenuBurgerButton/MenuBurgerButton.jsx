@@ -27,7 +27,7 @@ const MenuBurgerButton = () => {
       const menu = document.getElementById('menu');
 
       if (window.location.pathname !== '/') {
-        if (windowWidth >= 375 && windowWidth <= 1280) {
+        if (windowWidth >= 320 && windowWidth <= 1280) {
           ref.current.parentNode.style.display = 'flex';
           userInfoBody?.classList.add('user-info__burger');
         }

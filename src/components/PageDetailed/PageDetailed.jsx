@@ -10,7 +10,7 @@ const PageDetailed = () => {
 
   useEffect(() => {
     const menu = document.getElementById('burgerMenu');
-    if (window.screen.width >= 375 && window.screen.width <= 1280) {
+    if (window.screen.width >= 320 && window.screen.width <= 1280) {
       menu.parentNode.children[2].classList.add('user-info__burger');
       menu.style.display = 'flex';
     }
