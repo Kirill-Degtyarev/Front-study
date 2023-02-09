@@ -63,6 +63,11 @@
   cursor: pointer;
 }
 
+.card-promotions .item-body__star svg {
+  margin-bottom: 3px;
+  margin-left: 1px;
+}
+
 .item-body__star svg {
   margin-bottom: 2px;
 }
@@ -118,6 +123,7 @@
 .item-body__footer-date span {
   position: relative;
   display: none;
+  font-size: 13px;
   margin-left: 6px;
   margin-bottom: 0;
   padding: 0px 6px;
@@ -144,6 +150,7 @@
   display: inline;
   margin-bottom: 0;
   margin-left: 6px;
+  line-height: normal;
 }
 
 .item-action {

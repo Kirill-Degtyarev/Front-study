@@ -170,9 +170,12 @@ blockquote p {
     font-size: 36px;
   }
   h3 {
-    margin-top: 38px;
+    margin-top: 39px;
   }
   img {
     height: 434px;
+  }
+  blockquote {
+    margin-bottom: 21px;
   }
 }
