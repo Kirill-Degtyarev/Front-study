@@ -11,21 +11,25 @@ export default class ActionValidate {
     if (selfItem.value.trim().length === 0) {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
+      selfItem.style.color = '#f37575';
       formik.errors.fio = textErrorLen;
       return;
     } else {
       if (selfItem.parentNode.classList.contains('input-invalid')) {
         selfItem.parentNode.classList.remove('input-invalid');
+        selfItem.style.color = '#2e3640';
         delete formik.errors.fio;
       }
     }
     if (!NAME_REGEXP.test(selfItem.value) && selfItem.value.length !== 0) {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorReg;
+      selfItem.style.color = '#f37575';
       formik.errors.fio = textErrorReg;
     } else {
       if (selfItem.parentNode.classList.contains('input-invalid')) {
         selfItem.parentNode.classList.remove('input-invalid');
+        selfItem.style.color = '#2e3640';
         delete formik.errors.fio;
       }
     }
@@ -40,21 +44,25 @@ export default class ActionValidate {
     if (selfItem.value.trim() === '') {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
+      selfItem.style.color = '#f37575';
       formik.errors[e.target.id] = textErrorLen;
       return;
     } else {
       if (selfItem.parentNode.classList.contains('input-invalid')) {
         selfItem.parentNode.classList.remove('input-invalid');
+        selfItem.style.color = '#2e3640';
         delete formik.errors[e.target.id];
       }
     }
     if (e.target.value.indexOf('_') !== -1) {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorReg;
+      selfItem.style.color = '#f37575';
       formik.errors[e.target.id] = textErrorReg;
     } else {
       if (selfItem.parentNode.classList.contains('input-invalid')) {
         selfItem.parentNode.classList.remove('input-invalid');
+        selfItem.style.color = '#2e3640';
         delete formik.errors[e.target.id];
       }
     }
@@ -70,21 +78,25 @@ export default class ActionValidate {
     if (selfItem.value.trim() === '') {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
+      selfItem.style.color = '#f37575';
       formik.errors[e.target.id] = textErrorLen;
       return;
     } else {
       if (selfItem.parentNode.classList.contains('input-invalid')) {
         selfItem.parentNode.classList.remove('input-invalid');
+        selfItem.style.color = '#2e3640';
         delete formik.errors[e.target.id];
       }
     }
     if (!EMAIL_REGEXP.test(selfItem.value)) {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorReg;
+      selfItem.style.color = '#f37575';
       formik.errors[e.target.id] = textErrorReg;
     } else {
       if (selfItem.parentNode.classList.contains('input-invalid')) {
         selfItem.parentNode.classList.remove('input-invalid');
+        selfItem.style.color = '#2e3640';
         delete formik.errors[e.target.id];
       }
     }
