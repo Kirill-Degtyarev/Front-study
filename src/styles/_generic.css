@@ -138,7 +138,7 @@ ol li:not(:last-child) {
 ol li::before {
   position: absolute;
   counter-increment: li;
-  content: counters(li, '.') '. ';
+  content: counters(li, '.');
   color: var(--sail);
   left: -22px;
 }

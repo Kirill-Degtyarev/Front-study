@@ -42,17 +42,16 @@
 }
 
 .form__button {
-  padding-top: 9px;
+  padding-top: 10px;
 }
 
 .form__button input {
-  padding: 9px 10px;
+  padding: 9px 10px 8px 10px;
   font-size: 14px;
   line-height: 120%;
 }
 
 .form__button input:last-child {
-  padding: 9px 9px;
   margin-left: 5px;
 }
 
