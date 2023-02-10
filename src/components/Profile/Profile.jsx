@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import InputBody from '../InputBody/InputBody';
 import Button from '../../UI/Button/Button';
-// import DataInputs from '../../data/DataInputs.json';
+import Loader from '../Loader/Loader';
 
 import styles from './Profile.module.css';
 import ActionData from '../../Action/ActionData';
@@ -91,8 +91,9 @@ const Profile = () => {
   });
 
   return (
-    <div className={styles['profile-body']}>
-      {dataInputs && (
+    <div
+      className={isLoaded ? styles['profile-body'] : styles['profile-loader']}>
+      {isLoaded ? (
         <form
           className="profile-body__form"
           onSubmit={formik.handleSubmit}
@@ -122,6 +123,8 @@ const Profile = () => {
             </Button>
           </div>
         </form>
+      ) : (
+        <Loader />
       )}
     </div>
   );
