@@ -11,6 +11,11 @@ const DetailedArticle = () => {
   const { pathname } = useLocation();
   const articleRef = useRef(null);
 
+  /**
+   * Тут происходит получении статьи с backend и когда статья пришла и
+   * смонтировалась, то ищется последний элемент и у него убираются
+   * нижние отступы.
+   */
   useEffect(() => {
     ActionData.fetchData(pathname, setData, setIsLoaded);
 

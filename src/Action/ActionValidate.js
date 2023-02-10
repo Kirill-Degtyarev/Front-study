@@ -1,13 +1,14 @@
 export default class ActionValidate {
   /**
-   * Валидация ФИО по количеству символов и содержанию цифр или спецсимволов
+   * Валидация ФИО по количеству символов и содержанию цифр или спецсимволов.
+   * Если валидация не пройдена, то в момент выхода с инпута показывается
+   * ошибка, которая потом пушится в массив ошибок Formik
    */
   static onValidationFullName(e, formik) {
     const selfItem = e.target;
     const NAME_REGEXP = /^[a-zа-яЁё\s]+$/i;
     const textErrorReg = 'ФИО не должно содержать цифры и спецсимволы';
     const textErrorLen = 'Поле обязательно для заполнения';
-
     if (selfItem.value.trim().length === 0) {
       selfItem.parentNode.classList.add('input-invalid');
       selfItem.parentNode.dataset.error = textErrorLen;
@@ -35,7 +36,9 @@ export default class ActionValidate {
     }
   }
   /**
-   * Валидация номера телефона по количеству символов и неверному формату
+   * Валидация номера телефона по количеству символов и неверному формату.
+   * Если валидация не пройдена, то в момент выхода с инпута показывается
+   * ошибка, которая потом пушится в массив ошибок Formik
    */
   static onValidationTel(e, formik) {
     const selfItem = e.target;
@@ -68,7 +71,9 @@ export default class ActionValidate {
     }
   }
   /**
-   * Валидация Email по количеству символов и неверному формату
+   * Валидация Email по количеству символов и неверному формату.
+   * Если валидация не пройдена, то в момент выхода с инпута показывается
+   * ошибка, которая потом пушится в массив ошибок Formik
    */
   static onValidationEmail(e, formik) {
     const selfItem = e.target;
@@ -102,7 +107,11 @@ export default class ActionValidate {
     }
   }
   /**
-   * Валидация поля ввода по количеству символов
+   * Валидация поля ввода по количеству символов.
+   * Если валидация не пройдена, то в момент выхода с инпута показывается
+   * ошибка, которая потом пушится в массив ошибок Formik. В валидацию textarea
+   * встроена функция, которая изменяет размер блока в зависимости от наполнения
+   * при выходи с textarea возвращается дефолтная высота.
    */
   static onValidationTextArea(e, handler, formik, inputData) {
     const textErrorLen = 'Поле обязательно для заполнения';

@@ -1,6 +1,9 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
+/**
+ * Компонент предназначен для отобрежени загрузки карточки новостей и акций.
+ */
 const CardSkeleton = (props) => {
   return (
     <ContentLoader

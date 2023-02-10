@@ -47,7 +47,7 @@ export default class ActionDate {
     }
   }
   /**
-   * Получение статуса акци
+   * Получение статуса акции
    */
   static getStatusDate(date) {
     const currentDate = new Date();

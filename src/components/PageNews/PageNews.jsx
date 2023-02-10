@@ -30,21 +30,23 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
    * Сортировка данных по времени и колличеству
    */
 
-  const sortCard = data
-    ?.sort((a, b) => {
-      return new Date(Number(a.pubDate)) - new Date(Number(b.pubDate));
-    })
-    .slice(0, counterItem)
-    .map((item, index) => (
-      <CardItem
-        key={item.id}
-        indexId={index < 9 ? index : (index + 1) % 10}
-        dataItem={item}
-        bgImg={(index + 1) % 3 === 0}
-        isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
-        itemType={itemType}
-      />
-    ));
+  const sortCard =
+    data &&
+    data
+      .sort((a, b) => {
+        return new Date(Number(a.pubDate)) - new Date(Number(b.pubDate));
+      })
+      .slice(0, counterItem)
+      .map((item, index) => (
+        <CardItem
+          key={item.id}
+          indexId={index < 9 ? index : (index + 1) % 10}
+          dataItem={item}
+          bgImg={(index + 1) % 3 === 0}
+          isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
+          itemType={itemType}
+        />
+      ));
 
   /**
    * Loader для карточек
@@ -113,6 +115,12 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
               {isLoaded ? sortCard : skeleton}
             </ul>
           </div>
+          {/**
+           * Кнопка показывается только когда количество новостей или акций
+           * превышает количество показываемых карточек, в ином случае она
+           * пропадает. В табе акции кнопка показывается для правильного
+           * pixelperfect, но её состояние disabled зависит от количества акций.
+           */}
           {data && (counterItem < data.length || itemType === 'promotions') && (
             <div className={styles['news-main__button']}>
               <Button
