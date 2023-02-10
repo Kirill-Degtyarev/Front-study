@@ -42,7 +42,7 @@
 }
 
 .card-news .item-body__info-title:hover a {
-  color: var(--black);
+  color: var(--cornflower-blue);
 }
 
 .card-news .item-img img:hover {
@@ -156,10 +156,6 @@
 .item-action {
   cursor: pointer;
 }
-
-/* .item-action svg {
-  width: auto;
-} */
 
 .liked-card svg path,
 .item-action__like:hover svg path {
