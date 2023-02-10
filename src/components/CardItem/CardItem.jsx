@@ -13,6 +13,11 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
   const [lines, setLines] = useState(0);
   const bodyInfoRef = useRef(null);
 
+  /**
+   * При рендере компонента ведётся рассчёт количества строк description,
+   * которые должны быть обрезаны. За основу берётся высота родительского
+   * блока из неё вычитается высота description и ведутся расчёты лишних строк
+   */
   useEffect(() => {
     if (bodyInfoRef.current) {
       const isElementBg =

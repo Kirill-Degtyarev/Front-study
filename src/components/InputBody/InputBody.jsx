@@ -14,6 +14,10 @@ const InputBody = ({ input, formik }) => {
     [styles['input-disabled']]: input.disabled,
   });
 
+  /**
+   * В функции inputItem происходит возвращение элемента в зависмости от типа,
+   * которые мы получаем от родителя.
+   */
   const inputItem = (type) => {
     if (type === 'select') {
       return (
@@ -57,12 +61,12 @@ const InputBody = ({ input, formik }) => {
             </label>
             <div
               className={`${styles['input-body__input']} ${
-                formik.errors[input.inputName] ? 'input-invalid' : ''
+                formik.errors[input.inputName] ? 'input-invalid' : null
               }`}
               data-error={
                 formik.errors[input.inputName]
                   ? formik.errors[input.inputName]
-                  : ''
+                  : null
               }>
               {inputItem(input.inputType)}
             </div>

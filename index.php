@@ -76,4 +76,23 @@ $klein->respond('GET', '/api/promotions/[i:id]?', function ($request, $response,
     return $response->$send($data);
 });
 
+$klein->respond('GET', '/api/inputs/[i:id]?', function ($request, $response, $service) {
+    $send = $request->param('format', 'json');
+
+    $json = file_get_contents(__DIR__.'/inputs.json');
+    $data = json_decode($json, TRUE);
+
+    if ((int)$request->id) {
+        $key = array_search((int)$request->id, array_column($data, 'id'));
+
+        if ($key === FALSE) {
+            return $response->$send([]);
+        }
+
+        return $response->$send($data[$key]);
+    }
+
+    return $response->$send($data);
+});
+
 $klein->dispatch();

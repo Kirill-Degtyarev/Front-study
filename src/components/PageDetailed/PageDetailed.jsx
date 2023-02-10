@@ -8,9 +8,14 @@ import styles from './PageDetailed.module.css';
 const PageDetailed = () => {
   const { pathname } = useLocation();
 
+  /**
+   * При монтировании компонента вычисляется ширина окна и от этого зависит
+   * показывается ли кнопка бургер меню. При размонтировании компонента
+   * кнопка пропадает, так как она нам нужна только в этом компоненте.
+   */
   useEffect(() => {
     const menu = document.getElementById('burgerMenu');
-    if (window.screen.width >= 320 && window.screen.width <= 1280) {
+    if (window.screen.width >= 320 && window.screen.width <= 1279) {
       menu.parentNode.children[2].classList.add('user-info__burger');
       menu.style.display = 'flex';
     }
@@ -28,13 +33,9 @@ const PageDetailed = () => {
         </div>
         <div className={styles['detailed-body__outlet']}>
           <h1 className={styles.outlet__title}>
-            {
-              pathname === '/profile'
-                ? 'Редактировать профиль'
-                : // <>Редактировать профиль</>
-                  'Заголовок страницы'
-              // <>Заголовок страницы</>
-            }
+            {pathname === '/profile'
+              ? 'Редактировать профиль'
+              : 'Заголовок страницы'}
           </h1>
           <div className={styles.outlet__body}>
             <Outlet />

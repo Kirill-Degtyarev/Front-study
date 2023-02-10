@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import SvgGenerator from '../../SvgGenerator/SvgGenerator';
 import MenuItem from '../MenuItem/MenuItem';
 
 import styles from './Menu.module.css';
 
 const MENU_ITEM = [
-  { id: 1, title: 'Избранное', path: '/news/1' },
+  { id: 1, title: 'Избранное', path: '/news/10' },
   { id: 2, title: 'Моя компания', path: '/profile' },
   { id: 3, title: 'Моё развитие', path: null },
   { id: 4, title: 'Новости компании', path: null },

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import styles from './MenuBurgerButton.module.css';
 import styled from '../Menu/Menu.module.css';
 
@@ -8,6 +7,12 @@ const MenuBurgerButton = () => {
   const [path, setPath] = useState(window.location.pathname);
   const ref = useRef(null);
 
+  /**
+   * При рендре react вешаем обработчик события на окно, чтобы он следил за
+   * изменением ширины. Ширину мы получаем для того, чтобы определить состояние
+   * кнопки бургера. Так как бургер нам нужен при ширине экрана до 1280px, в
+   * иных случаях кнопка будет убираться.
+   */
   useEffect(() => {
     window.onresize = () => {
       setWindowWidth(window.screen.width);
@@ -27,11 +32,11 @@ const MenuBurgerButton = () => {
       const menu = document.getElementById('menu');
 
       if (window.location.pathname !== '/') {
-        if (windowWidth >= 320 && windowWidth <= 1280) {
+        if (windowWidth >= 320 && windowWidth <= 1279) {
           ref.current.parentNode.style.display = 'flex';
           userInfoBody?.classList.add('user-info__burger');
         }
-        if (windowWidth > 1280 || window.location.pathname === '/') {
+        if (windowWidth > 1279) {
           ref.current.parentNode.style.display = 'none';
           userInfoBody.classList.remove('user-info__burger');
           menu?.classList.remove(styled['menu-mobile']);
