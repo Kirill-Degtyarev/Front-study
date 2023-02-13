@@ -1,9 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import SelectInput from '../../UI/SelectInput/SelectInput';
-import Input from '../../UI/Input/Input';
 import Textarea from '../../UI/Textarea/Textarea';
+import InputSelect from '../../UI/InputSelect/InputSelect';
+import InputText from '../../UI/InputText/InputText';
+import InputTel from '../../UI/InputTel/InputTel';
+import InputEmail from '../../UI/InputEmail/InputEmail';
+import InputRadio from '../../UI/InputRadio/InputRadio';
+import InputCheckbox from '../../UI/InputCheckbox/InputCheckbox';
 
 import styles from './InputBody.module.css';
 
@@ -19,27 +23,30 @@ const InputBody = ({ input, formik }) => {
    * которые мы получаем от родителя.
    */
   const inputItem = (type) => {
-    if (type === 'select') {
-      return (
-        <SelectInput
-          options={input.options}
-          isDisabled={input.disabled}
-          formik={formik}
-          inputName={input.inputName}
-        />
-      );
-    }
-    if (
-      type === 'text' ||
-      type === 'tel' ||
-      type === 'email' ||
-      type === 'radio' ||
-      type === 'checkbox'
-    ) {
-      return <Input inputData={input} formik={formik} />;
-    }
-    if (type === 'textarea') {
-      return <Textarea inputData={input} formik={formik} />;
+    switch (type) {
+      case 'select':
+        return (
+          <InputSelect
+            options={input.options}
+            isDisabled={input.disabled}
+            formik={formik}
+            inputName={input.inputName}
+          />
+        );
+      case 'textarea':
+        return <Textarea inputData={input} formik={formik} />;
+      case 'text':
+        return <InputText inputData={input} formik={formik} />;
+      case 'tel':
+        return <InputTel inputData={input} formik={formik} />;
+      case 'email':
+        return <InputEmail inputData={input} formik={formik} />;
+      case 'radio':
+        return <InputRadio inputData={input} formik={formik} />;
+      case 'checkbox':
+        return <InputCheckbox inputData={input} formik={formik} />;
+      default:
+        break;
     }
   };
   return (

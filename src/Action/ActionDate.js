@@ -1,3 +1,6 @@
+import format from 'date-fns/format';
+import russianLocale from 'date-fns/locale/ru';
+
 const MONTH = [
   'января',
   'февраля',
@@ -19,32 +22,9 @@ export default class ActionDate {
    */
   static getFullDate(date, modifer) {
     const newDate = new Date(Number(date * 1000));
-    let fullDate = null,
-      day = null,
-      month = null,
-      year = null;
-    switch (modifer) {
-      case 'dd/mm/yy':
-        day =
-          newDate.getDate() < 10 ? '0' + newDate.getDate() : newDate.getDate();
-        month =
-          newDate.getMonth() < 10
-            ? '0' + (newDate.getMonth() + 1)
-            : newDate.getMonth() + 1;
-        year = newDate.getFullYear();
-        fullDate = day + '.' + month + '.' + year;
-        return fullDate;
-      case 'dd/mounth/yy':
-        fullDate =
-          newDate.getDate() +
-          ' ' +
-          MONTH[newDate.getMonth()] +
-          ' ' +
-          newDate.getFullYear();
-        return fullDate;
-      default:
-        break;
-    }
+    return format(newDate, `${modifer}`, {
+      locale: russianLocale,
+    });
   }
   /**
    * Получение статуса акции

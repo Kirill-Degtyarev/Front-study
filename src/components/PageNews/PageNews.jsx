@@ -37,15 +37,8 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
         return new Date(Number(a.pubDate)) - new Date(Number(b.pubDate));
       })
       .slice(0, counterItem)
-      .map((item, index) => (
-        <CardItem
-          key={item.id}
-          indexId={index < 9 ? index : (index + 1) % 10}
-          dataItem={item}
-          bgImg={(index + 1) % 3 === 0}
-          isReversed={itemType === 'promotions' && (index + 1) % 2 === 0}
-          itemType={itemType}
-        />
+      .map((item) => (
+        <CardItem key={item.id} dataItem={item} itemType={itemType} />
       ));
 
   /**
