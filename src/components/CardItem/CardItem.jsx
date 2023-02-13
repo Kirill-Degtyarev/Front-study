@@ -7,7 +7,7 @@ import SvgGenerator from '../../SvgGenerator/SvgGenerator';
 import styles from './CardItem.module.css';
 import ActionDate from '../../Action/ActionDate';
 
-const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
+const CardItem = ({ dataItem, itemType }) => {
   const [isFavorites, setIsFavorites] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [lines, setLines] = useState(0);
@@ -47,24 +47,9 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
     }
   }, []);
 
-  const itemClass = classNames(styles['card-list__item'], {
-    [styles['bg-img']]: bgImg && itemType === 'news',
-    [styles['card-news']]: itemType === 'news',
-    [styles['card-promotions']]: itemType === 'promotions',
-    [styles['card-promotions__reversed']]: isReversed,
-    [styles['card-grid__1']]: indexId % 10 === 0 && itemType === 'news',
-    [styles['card-grid__2']]: indexId % 10 === 1 && itemType === 'news',
-    [styles['card-grid__3']]: indexId % 10 === 2 && itemType === 'news',
-    [styles['card-grid__4']]: indexId % 10 === 3 && itemType === 'news',
-    [styles['card-grid__5']]: indexId % 10 === 4 && itemType === 'news',
-    [styles['card-grid__6']]: indexId % 10 === 5 && itemType === 'news',
-    [styles['card-grid__7']]: indexId % 10 === 6 && itemType === 'news',
-    [styles['card-grid__8']]: indexId % 10 === 7 && itemType === 'news',
-    [styles['card-grid__9']]: indexId % 10 === 8 && itemType === 'news',
-  });
-
   return (
-    <li className={itemClass}>
+    <li
+      className={styles['card-list__item'] + ' ' + styles[`card-${itemType}`]}>
       <div className={styles['item-img']}>
         {itemType === 'news' ? (
           <Link to={`/news/${dataItem.id}`}>
@@ -105,11 +90,8 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
           </Dotdotdot>
         </div>
         <div className={styles['item-body__footer']}>
-          <span
-            className={
-              styles['item-body__footer-date'] + ' ' + 'fz13-regent-gray'
-            }>
-            {ActionDate.getFullDate(dataItem.pubDate, 'dd/mm/yy')}
+          <span className={styles['item-body__footer-date']}>
+            {ActionDate.getFullDate(dataItem.pubDate, 'dd.MM.yyyy')}
             {itemType === 'promotions' && (
               <span>{ActionDate.getStatusDate(dataItem.pubDate)}</span>
             )}
@@ -123,7 +105,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
                 setIsLiked((prev) => !prev);
               }}>
               <SvgGenerator id="like" />
-              <span className={'fz13-regent-gray'}>18</span>
+              <span>18</span>
             </div>
             {itemType === 'news' && (
               <div
@@ -131,7 +113,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
                   styles['item-action__comments'] + ' ' + styles['item-action']
                 }>
                 <SvgGenerator id="comments" />
-                <span className={'fz13-regent-gray'}>35</span>
+                <span>35</span>
               </div>
             )}
             <div
@@ -139,7 +121,7 @@ const CardItem = ({ indexId, dataItem, bgImg, isReversed, itemType }) => {
                 styles['item-action__view'] + ' ' + styles['item-action']
               }>
               <SvgGenerator id="view" />
-              <span className={'fz13-regent-gray'}>50</span>
+              <span>50</span>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import parse from 'html-react-parser';
 
 import ActionDate from '../../Action/ActionDate';
 import ActionData from '../../Action/ActionData';
@@ -39,9 +40,9 @@ const DetailedArticle = () => {
       ref={articleRef}>
       {isLoaded ? (
         <>
-          <span>{ActionDate.getFullDate(data.pubDate, 'dd/mounth/yy')}</span>
+          <span>{ActionDate.getFullDate(data.pubDate, 'dd MMMM yyyy')}</span>
           <h2>{data.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: data.fulltext }} />
+          {parse(`<div>${data.fulltext}</div>`)}
         </>
       ) : (
         <Loader />

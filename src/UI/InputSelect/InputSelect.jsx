@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-const SelectInput = ({ options, isDisabled, formik, inputName }) => {
+const InputSelect = ({ options, isDisabled, formik, inputName }) => {
   const selectStyles = {
     container: (styles) => ({
       ...styles,
@@ -73,4 +73,4 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
   );
 };
 
-export default SelectInput;
+export default InputSelect;
