@@ -10,6 +10,7 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
     valueContainer: (styles) => ({
       ...styles,
       flex: 'none',
+      marginBottom: '-3px',
     }),
     control: (styles) => ({
       ...styles,
@@ -46,7 +47,7 @@ const SelectInput = ({ options, isDisabled, formik, inputName }) => {
       backgroundColor: '#fff',
       boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.03)',
       border: '1px solid #E5E6E9',
-      top: '-26px',
+      top: '-25px',
       left: '-25px',
     }),
     indicatorsContainer: (styles) => ({

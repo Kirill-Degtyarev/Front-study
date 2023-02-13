@@ -89,20 +89,13 @@
 }
 
 .item-body__info-title a {
-  font-family: 'PT Sans';
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  line-height: 150%;
   color: var(--outer-space);
 }
 
 .item-body__info-subtitle {
   position: relative;
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
   line-height: 150%;
   color: var(--regent-gray);
   margin: 0px 0px 0px 0px;

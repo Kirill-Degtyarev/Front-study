@@ -71,10 +71,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
           <h1 className={styles['news-top__title']}>
             Получите <span>максимум</span> от отдела продаж
           </h1>
-          <p
-            className={
-              styles['news-top__description'] + ' ' + 'fz15-regent-gray'
-            }>
+          <p className={styles['news-top__description']}>
             amoCRM — это полный набор инструментов, которые раскроют потенциал
             вашего отдела продаж и повысят его эффективность. Считается лучшей
             CRM-системой по версии&nbsp;
@@ -88,8 +85,6 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
             <ul className={styles['news-main__menu-list']} ref={menuList}>
               <li
                 className={
-                  'fz15-regent-gray' +
-                  ' ' +
                   styles['menu-list__item'] +
                   ' ' +
                   styles['menu-list__item-active']
@@ -101,7 +96,7 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
                 Новости
               </li>
               <li
-                className={'fz15-regent-gray' + ' ' + styles['menu-list__item']}
+                className={styles['menu-list__item']}
                 id="promotions"
                 onClick={(e) => {
                   handleActiveTab(e);
@@ -121,13 +116,13 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
            * пропадает. В табе акции кнопка показывается для правильного
            * pixelperfect, но её состояние disabled зависит от количества акций.
            */}
-          {data && (counterItem < data.length || itemType === 'promotions') && (
+          {data && counterItem < data.length && (
             <div className={styles['news-main__button']}>
               <Button
                 onClickHandler={handleChangeCounterItem}
                 color="blue"
                 type="button"
-                disabled={counterItem > data.length}>
+                disabled={false}>
                 Смотреть ещё
               </Button>
             </div>

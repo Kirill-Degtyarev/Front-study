@@ -117,8 +117,10 @@ export default class ActionValidate {
     const textErrorLen = 'Поле обязательно для заполнения';
     if (handler === 'change') {
       formik.values[inputData.inputName] = e.target.value;
-      e.target.style.lineHeight = '130%';
       e.target.style.height = e.target.scrollHeight + 'px';
+      if (e.target.value.trim() === '') {
+        e.target.style.height = '19px';
+      }
     }
     if (handler === 'blur') {
       e.target.style.height = '19px';

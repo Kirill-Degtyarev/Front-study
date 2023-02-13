@@ -7,6 +7,12 @@
   padding: 30px 20px 39px 20px;
 }
 
+.article-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   .article-body {
     padding: 40px 20px 49px 20px;
