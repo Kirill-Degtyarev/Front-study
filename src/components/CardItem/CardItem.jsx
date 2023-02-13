@@ -50,13 +50,11 @@ const CardItem = ({ dataItem, itemType }) => {
     <li
       className={styles['card-list__item'] + ' ' + styles[`card-${itemType}`]}>
       {itemType === 'news' ? (
-        <Link to={`/news/${dataItem.id}`}>
-          <div className={styles['item-img']}>
-            <img
-              src={dataItem.image ? dataItem.image : dataItem.link}
-              alt="images"
-            />
-          </div>
+        <Link to={`/news/${dataItem.id}`} className={styles['item-img']}>
+          <img
+            src={dataItem.image ? dataItem.image : dataItem.link}
+            alt="images"
+          />
         </Link>
       ) : (
         <div className={styles['item-img']}>
