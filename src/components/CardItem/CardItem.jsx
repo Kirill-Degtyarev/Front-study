@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
 import Dotdotdot from 'react-dotdotdot';
 import SvgGenerator from '../../SvgGenerator/SvgGenerator';
 
@@ -50,21 +49,23 @@ const CardItem = ({ dataItem, itemType }) => {
   return (
     <li
       className={styles['card-list__item'] + ' ' + styles[`card-${itemType}`]}>
-      <div className={styles['item-img']}>
-        {itemType === 'news' ? (
-          <Link to={`/news/${dataItem.id}`}>
+      {itemType === 'news' ? (
+        <Link to={`/news/${dataItem.id}`}>
+          <div className={styles['item-img']}>
             <img
               src={dataItem.image ? dataItem.image : dataItem.link}
               alt="images"
             />
-          </Link>
-        ) : (
+          </div>
+        </Link>
+      ) : (
+        <div className={styles['item-img']}>
           <img
             src={dataItem.image ? dataItem.image : dataItem.link}
             alt="images"
           />
-        )}
-      </div>
+        </div>
+      )}
       <div className={styles['item-body']}>
         <div
           className={`${styles['item-body__star']} ${
