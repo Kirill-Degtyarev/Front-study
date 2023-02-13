@@ -6,7 +6,7 @@ import SvgGenerator from '../../SvgGenerator/SvgGenerator';
 import styles from './CardItem.module.css';
 import ActionDate from '../../Action/ActionDate';
 
-const CardItem = ({ dataItem, itemType }) => {
+const CardItem = ({ dataItem, itemType, path, status, comments }) => {
   const [isFavorites, setIsFavorites] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [lines, setLines] = useState(0);
@@ -49,21 +49,12 @@ const CardItem = ({ dataItem, itemType }) => {
   return (
     <li
       className={styles['card-list__item'] + ' ' + styles[`card-${itemType}`]}>
-      {itemType === 'news' ? (
-        <Link to={`/news/${dataItem.id}`} className={styles['item-img']}>
-          <img
-            src={dataItem.image ? dataItem.image : dataItem.link}
-            alt="images"
-          />
-        </Link>
-      ) : (
-        <div className={styles['item-img']}>
-          <img
-            src={dataItem.image ? dataItem.image : dataItem.link}
-            alt="images"
-          />
-        </div>
-      )}
+      <Link to={path} className={styles['item-img']}>
+        <img
+          src={dataItem.image ? dataItem.image : dataItem.link}
+          alt="images"
+        />
+      </Link>
       <div className={styles['item-body']}>
         <div
           className={`${styles['item-body__star']} ${
@@ -76,11 +67,7 @@ const CardItem = ({ dataItem, itemType }) => {
         </div>
         <div className={styles['item-body__info']} ref={bodyInfoRef}>
           <h2 className={styles['item-body__info-title']}>
-            {itemType === 'news' ? (
-              <Link to={`/news/${dataItem.id}`}>{dataItem.title}</Link>
-            ) : (
-              dataItem.title
-            )}
+            <Link to={path}>{dataItem.title}</Link>
           </h2>
           <Dotdotdot clamp={lines}>
             <p className={styles['item-body__info-subtitle']}>
@@ -91,7 +78,7 @@ const CardItem = ({ dataItem, itemType }) => {
         <div className={styles['item-body__footer']}>
           <span className={styles['item-body__footer-date']}>
             {ActionDate.getFullDate(dataItem.pubDate, 'dd.MM.yyyy')}
-            {itemType === 'promotions' && (
+            {status && (
               <span>{ActionDate.getStatusDate(dataItem.pubDate)}</span>
             )}
           </span>
@@ -106,7 +93,7 @@ const CardItem = ({ dataItem, itemType }) => {
               <SvgGenerator id="like" />
               <span>18</span>
             </div>
-            {itemType === 'news' && (
+            {comments && (
               <div
                 className={
                   styles['item-action__comments'] + ' ' + styles['item-action']

@@ -38,7 +38,14 @@ const PageNews = ({ isLoaded, data, itemType, setPathName }) => {
       })
       .slice(0, counterItem)
       .map((item) => (
-        <CardItem key={item.id} dataItem={item} itemType={itemType} />
+        <CardItem
+          key={item.id}
+          dataItem={item}
+          itemType={itemType}
+          path={itemType === 'news' ? `/news/${item.id}` : ''}
+          status={itemType === 'promotions'}
+          comments={itemType === 'news'}
+        />
       ));
 
   /**
