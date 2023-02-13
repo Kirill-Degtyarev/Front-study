@@ -27,9 +27,7 @@
 }
 
 .news-top__description {
-  color: var(--outer-space) !important;
   margin: 0px 0px 0px 0px;
-  line-height: 154% !important;
 }
 
 .news-top__description a {
@@ -58,8 +56,7 @@
 .menu-list__item {
   position: relative;
   padding: 0px 5px;
-  line-height: 130% !important;
-  color: var(--outer-space) !important;
+  line-height: 130%;
   cursor: pointer;
   transition: 0.3s ease all;
 }
@@ -121,7 +118,7 @@
     grid-gap: 20px;
   }
   .news-main__button {
-    margin-top: 19px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

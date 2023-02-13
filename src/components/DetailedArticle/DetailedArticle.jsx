@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import styles from './DetailedArticle.module.css';
 import ActionDate from '../../Action/ActionDate';
 import ActionData from '../../Action/ActionData';
+
+import Loader from '../Loader/Loader';
+
+import styles from './DetailedArticle.module.css';
 
 const DetailedArticle = () => {
   const [data, setData] = useState(null);
@@ -19,7 +22,7 @@ const DetailedArticle = () => {
   useEffect(() => {
     ActionData.fetchData(pathname, setData, setIsLoaded);
 
-    if (data && articleRef.current) {
+    if (isLoaded && articleRef.current) {
       if (articleRef.current.childNodes.length !== 0) {
         const articleBodyLength =
           articleRef.current.childNodes[2].childNodes.length;
@@ -31,13 +34,17 @@ const DetailedArticle = () => {
   }, [articleRef.current]);
 
   return (
-    <div className={styles['article-body']} ref={articleRef}>
-      {data && (
+    <div
+      className={isLoaded ? styles['article-body'] : styles['article-loader']}
+      ref={articleRef}>
+      {isLoaded ? (
         <>
           <span>{ActionDate.getFullDate(data.pubDate, 'dd/mounth/yy')}</span>
           <h2>{data.title}</h2>
           <div dangerouslySetInnerHTML={{ __html: data.fulltext }} />
         </>
+      ) : (
+        <Loader />
       )}
     </div>
   );

@@ -24,7 +24,6 @@ const App = () => {
   useEffect(() => {
     pathName === '/profile' ? setPathName('/news') : null;
     if (pathname === '/') {
-      setIsLoaded(false);
       ActionData.fetchData(pathName, setData, setIsLoaded);
     }
     setIsMount(true);

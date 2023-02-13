@@ -44,6 +44,10 @@
   display: none;
 }
 
+.input-body textarea::placeholder {
+  padding-top: 3px;
+}
+
 .input-body__title {
   line-height: 19px !important;
   color: var(--regent-gray);
